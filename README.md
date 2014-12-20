@@ -5,6 +5,7 @@ myproject
 
 gulpfile for web development
 
+* compile jade to html
 * compile sass to css (+ sass-globbing option)
 * combine js files and minify
 * generate css sprite

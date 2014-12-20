@@ -39,8 +39,6 @@ var paths = {
   'scssFiles'   : 'src/scss/**/*.scss',
 // css
   'cssDest'     : 'dist/css',
-// others
-  'filterDir'   : 'bower_components'
 }
 
 /***************************************************************************
@@ -116,7 +114,6 @@ gulp.task('jade', function() {
     .pipe($.data(function(file) {
       return require('./setting.json');
     }))
-    // .pipe($.changed(paths.htmlDest, { extension: '.html' }))
     .pipe($.plumber())
     .pipe($.jade({ pretty: true }))
     .pipe(gulp.dest(paths.htmlDest))
