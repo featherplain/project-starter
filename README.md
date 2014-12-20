@@ -23,18 +23,17 @@ gulpfile for web development
 ## File structure
 Basically source file placed in "src/". It passed to "dist/" as destination through the "gulp".
 ~~~~
-
 .
 ├── README.md
 ├── bower_components
 ├── bower.json
 ├── dist
 │   ├── css
-│   │   └── app.css
+│   │   └── app.css
 │   ├── img
 │   │   ├── bx_loader.gif
 │   │   ├── controls.png
-│   │   └── sprite.png
+│   │   └── sprite.png
 │   └── js
 │       ├── lib.min.js
 │       └── script.min.js
@@ -42,48 +41,49 @@ Basically source file placed in "src/". It passed to "dist/" as destination thro
 ├── node_modules
 ├── package.json
 ├── setting.json
-└── src
-    ├── html
-    │   └── index.html
-    ├── img
-    │   └── sprite
-    │       ├── icon_star-red.png
-    │       ├── icon_star-yellow.png
-    │       └── icon_star_blue.png
-    ├── jade
-    │   ├── inc
-    │   │   ├── core
-    │   │   │   ├── _base.jade
-    │   │   │   ├── _config.jade
-    │   │   │   └── _mixins.jade
-    │   │   ├── layout
-    │   │   │   ├── _layout-footer.jade
-    │   │   │   └── _layout-header.jade
-    │   │   └── modules
-    │   │       └── _module-button.jade
-    │   └── index.jade
-    ├── js
-    │   ├── app
-    │   │   └── script.js
-    │   └── lib
-    │       ├── highlight.pack.js
-    │       └── jquery.bxslider.min.js
-    └── scss
-        ├── app.scss
-        ├── core
-        │   ├── _config.scss
-        │   ├── _default.scss
-        │   ├── _mixins.scss
-        │   └── _normalize.scss
-        ├── layout
-        │   ├── _layout-common.scss
-        │   ├── _layout-footer.scss
-        │   └── _layout-header.scss
-        └── module
-            ├── _module-buttons.scss
-            ├── _module-sprite.scss
-            └── components
-
+├── src
+│   ├── html
+│   │   └── index.html
+│   ├── img
+│   │   └── sprite
+│   │       ├── icon_star-red.png
+│   │       ├── icon_star-yellow.png
+│   │       └── icon_star_blue.png
+│   ├── jade
+│   │   ├── inc
+│   │   │   ├── core
+│   │   │   │   ├── _base.jade
+│   │   │   │   ├── _config.jade
+│   │   │   │   └── _mixins.jade
+│   │   │   ├── layout
+│   │   │   │   ├── _layout-footer.jade
+│   │   │   │   └── _layout-header.jade
+│   │   │   └── modules
+│   │   │       └── _module-button.jade
+│   │   └── index.jade
+│   ├── js
+│   │   ├── app
+│   │   │   └── script.js
+│   │   └── lib
+│   │       ├── highlight.pack.js
+│   │       └── jquery.bxslider.min.js
+│   └── scss
+│       ├── app.scss
+│       ├── core
+│       │   ├── _config.scss
+│       │   ├── _default.scss
+│       │   ├── _mixins.scss
+│       │   └── _normalize.scss
+│       ├── layout
+│       │   ├── _layout-common.scss
+│       │   ├── _layout-footer.scss
+│       │   └── _layout-header.scss
+│       └── module
+│           ├── _module-buttons.scss
+│           ├── _module-jquery.bxslider.scss
+│           ├── _module-monokai.scss
+│           └── _module-sprite.scss
+└── style.css
 ~~~~
 
 ## Usage
@@ -107,11 +107,6 @@ Basically source file placed in "src/". It passed to "dist/" as destination thro
 5.  Run gulp.
 
 		$ gulp
-
-    or
-
-		$ npm start
-
 
 ### autoprefix
 

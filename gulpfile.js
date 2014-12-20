@@ -56,7 +56,7 @@ gulp.task('bower-init', function(){
     .pipe(filterJs.restore())
     .pipe(filterCss)
     .pipe($.rename({ prefix: '_module-', extname: '.scss' }))
-    .pipe(gulp.dest('src/scss/module/components'))
+    .pipe(gulp.dest('src/scss/module'))
     .pipe(filterCss.restore())
     .pipe(filterImage)
     .pipe(gulp.dest(paths.imgDest))

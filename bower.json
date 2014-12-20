@@ -29,8 +29,7 @@
     "highlightjs": {
       "main": [
         "**/highlight.pack.js",
-        "**/default.css",
-        "**/styles/*.css"
+        "**/monokai.css"
       ],
       "dependencies": null
     }
