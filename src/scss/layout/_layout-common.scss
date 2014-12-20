@@ -1,0 +1,19 @@
+@charset "utf-8";
+
+/* ======================================= */
+/* common
+/* ======================================= */
+
+.l-container {
+	@extend %baseWidth;
+}
+
+.red-star {
+	@include sprite($icon_star-red);
+}
+.yellow-star {
+	@include sprite($icon_star-yellow);
+}
+.blue-star {
+	@include sprite($icon_star-blue);
+}

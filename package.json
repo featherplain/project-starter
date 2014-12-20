@@ -1,0 +1,30 @@
+{
+  "name": "myproject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+  	"gulp-init": "bower install; gulp init",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Megumi Hano",
+  "license": "MIT",
+  "devDependencies": {
+    "browser-sync": "latest",
+    "gulp": "latest",
+    "gulp-concat": "latest",
+    "gulp-data": "latest",
+    "gulp-flatten": "latest",
+    "gulp-filter": "latest",
+    "gulp-jade": "latest",
+    "gulp-load-plugins": "latest",
+    "gulp-pleeease": "latest",
+    "gulp-plumber": "latest",
+    "gulp-prettify": "latest",
+    "gulp-rename": "latest",
+    "gulp-ruby-sass": "latest",
+    "gulp.spritesmith": "latest",
+    "gulp-uglify": "latest",
+    "main-bower-files": "latest"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "name": "myproject",
+  "version": "0.0.0",
+  "authors": [
+    "featherplain <info@featherplain.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bxSlider": "latest",
+    "highlightjs": "latest"
+  },
+  "overrides": {
+    "bxSlider": {
+      "main": [
+        "**/jquery.bxslider.min.js",
+        "**/jquery.bxslider.css",
+        "**/images/bx_loader.gif",
+        "**/images/controls.png"
+      ],
+      "dependencies": null  
+    },
+    "highlightjs": {
+      "main": [
+        "**/highlight.pack.js",
+        "**/default.css",
+        "**/styles/*.css"
+      ],
+      "dependencies": null
+    }
+  }
+}
