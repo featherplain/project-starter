@@ -101,7 +101,7 @@ Basically source file placed in "src/". It passed to "dist/" as destination thro
 
 4.  Install bower components and initialize them.
 
-    $ npm run gulp-init
+		$ npm run gulp-init
 
 5.  Run gulp.
 
@@ -114,20 +114,22 @@ Basically source file placed in "src/". It passed to "dist/" as destination thro
 
 ### autoprefix
 
-You'd like to autoprefix specific browsers, open gulpfile and edit `.pipe(autoprefixer())` line.
+You'd like to autoprefix specific browsers, open gulpfile and edit below these lines.
 
 >
-	.pipe($.autoprefixer("last 2 version"))
+	autoprefixer: {
+  	browsers: ['last 2 versions']
+	},
 
 
-reference : [https://github.com/postcss/autoprefixer](https://github.com/postcss/autoprefixer)
+reference : [http://pleeease.io/docs/](http://pleeease.io/docs/)
 
 
 ### for WordPress
 
 If you'd like to use for WordPress development :
 
-1. Set proxy url on line 23.
+1. Set hostname on line 21.
 
 >
 	'vhost': 'example.dev'
@@ -135,6 +137,7 @@ If you'd like to use for WordPress development :
 2. Uncomment below these lines in gulpfile.
 
 >
+	// Local server
 	// gulp.task('browser-sync', function() {
 	// 		browserSync({
 	// 			proxy: paths.vhost,
