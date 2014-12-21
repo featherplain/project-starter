@@ -3,7 +3,7 @@ myproject
 
 ## Outline
 
-gulpfile for web development
+Project starter kit with gulpfile
 
 * compile jade to html
 * compile sass to css (+ sass-globbing option)
@@ -11,9 +11,9 @@ gulpfile for web development
 * generate css sprite
 * Browser-Sync support
 
-## Requires
+### Requires
 
-* bower
+* Bower
 * Node.js
 * npm
 * Ruby
@@ -21,7 +21,7 @@ gulpfile for web development
 * sass-globbing
 
 ## File structure
-Basically source file placed in "src/". It passed to "dist/" as destination through the "gulp".
+Basically source file placed in `src/`. It passed to `dist/` as destination through the "gulp".
 ~~~~
 .
 ├── README.md
@@ -86,7 +86,7 @@ Basically source file placed in "src/". It passed to "dist/" as destination thro
 └── style.css
 ~~~~
 
-## Usage
+## Setup your project
 
 1.  Install gulp.
 
@@ -108,29 +108,18 @@ Basically source file placed in "src/". It passed to "dist/" as destination thro
 
 		$ gulp
 
-### autoprefix
+### Options
 
-You'd like to autoprefix specific browsers, open gulpfile and edit below these lines.
+#### Connect with local server
 
->
-	autoprefixer: {
-  	browsers: ['last 2 versions']
-	},
-
-
-reference : [http://pleeease.io/docs/](http://pleeease.io/docs/)
-
-
-### for WordPress
-
-If you'd like to use for WordPress development :
+If you'd like to connect "browser-sync" with local server, edit `gulpfile.js`.
 
 1. Set hostname on line 21.
 
 >
 	'vhost': 'example.dev'
 
-2. Uncomment below these lines in gulpfile.
+2. Uncomment below these lines.
 
 >
 	// Local server
@@ -140,3 +129,34 @@ If you'd like to use for WordPress development :
 	// 			open: 'external'
 	// 		});
 	// });
+
+reference : [http://www.browsersync.io/docs/gulp/](http://www.browsersync.io/docs/gulp/)
+
+#### autoprefix
+
+You'd like to autoprefix specific browsers, open `gulpfile.js` and edit below these lines.
+
+>
+	autoprefixer: {
+  		browsers: ['last 2 versions']
+	},
+
+
+reference : [http://pleeease.io/docs/](http://pleeease.io/docs/)
+
+#### syntax highlight
+
+Your code is highlighted with [highlight.js](https://highlightjs.org/). If you'd like to use with specific style, open `bower.json` and edit below these lines. In this project, defalt style is "monokai".
+
+>
+	"highlightjs": {
+		"main": [
+			"**/highlight.pack.js",
+			"**/monokai.css"
+		],
+		"dependencies": null
+	}
+
+## Thanks
+
+This project forked from [vwxyutarooo/mygulpfile](https://github.com/vwxyutarooo/mygulpfile).
