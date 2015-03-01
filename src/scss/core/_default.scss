@@ -62,9 +62,10 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 pre {
-  background-color: #f5f5f4;
+  .hljs {
+    padding: 20px;
+  }
   border-radius: 5px;
-  border: 1px solid lighten($colorBase, 70%);
   &:last-child{
     margin-bottom: 0;
   }
@@ -73,9 +74,9 @@ code {
   padding: 1px 5px;
   background-color: #f4f4f4;
   border-radius: 4px;
-  word-break: break-all;
   font-size: 0.9em;
-  font-family: $fontFamilyCode; 
+  font-family: $fontFamilyCode;
+  line-height: 1.5;
 }
 ::selection {
   background: transparent;

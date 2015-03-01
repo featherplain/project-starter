@@ -7,6 +7,8 @@
 /* l-container */
 .l-container {
 	@extend %baseWidth;
+	max-width: 960px;
+	margin: 0 auto;
 }
 /* sprite images */
 .red-star {

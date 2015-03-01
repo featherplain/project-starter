@@ -11,4 +11,12 @@ $(function () {
     $.magnificPopup.close();
   });
 });
+// add action highlight.js
+hljs.initHighlightingOnLoad();
+// initialization of highlight.js
+$(document).ready(function() {
+  $('pre').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+});
     

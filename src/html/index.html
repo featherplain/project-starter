@@ -5,6 +5,7 @@
     <title>example</title>
     <meta name="description" content="this is an exmaple.">
     <meta name="keywords" content="exmaple, gulp, grunt, html, css">
+    <mera name="viewport" content="width=device-width, initial-scale=1.0"></mera>
     <link rel="icon" href="/favicon.png">
     <link rel="shortcut icon" href="/favicon.ico">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -13,13 +14,15 @@
   <body>
     <div class="l-container">
       <header role="banner" class="l-header"></header>
-      <h1>Hello World!</h1>
+      <h1>Sample page</h1>
       <div id="main" class="l-main">
         <section>
           <h2>example of sprite images</h2>
           <p class="red-star"></p>
           <p class="blue-star"></p>
           <p class="yellow-star"></p>
+        </section>
+        <section>
           <h2>magnific popup</h2>
           <p>here is demo.</p>
           <div class="modal"><a href="#modal" class="modal__btn">demo </a>
@@ -30,14 +33,52 @@
               </section>
             </div>
           </div>
+          <section>
+            <h2>highlight.js</h2>
+            <p>This is <code>code</code> tag.</p>
+            <pre class="js"><code>/***************************************************************************
+* Sass tasks
+***************************************************************************/
+ 
+gulp.task('rubySass', function () {
+  gulp.src(paths.scssFiles)
+    .pipe($.plumber())
+    .pipe($.rubySass({
+      r: 'sass-globbing',
+      'sourcemap=none': true
+    }))
+    .pipe($.filter('*.css'))
+    .pipe($.pleeease({
+      autoprefixer: {
+        browsers: ['last 2 versions']
+      },
+      sourcemaps: true
+    }))
+    .pipe($.filter('*.css').restore())
+    .pipe(gulp.dest(paths.cssDest))
+    .pipe(browserSync.reload({ stream: true }));
+});</code></pre>
+            <pre class="sass"><code>.block {
+  width: 100px;
+  height: auto;
+  margin: 0;
+  background: #ffffff;
+    &__element {
+        padding: 20px;
+    }
+    &--modifier {
+        background: $colorRed; 
+    }
+ }</code></pre>
+          </section>
         </section>
       </div>
       <footer class="l-footer">
-        <p>&copy; 2014 myproject</p>
+        <p>&copy; 2015 myproject</p>
       </footer>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="/dist/js/lib.min.js"></script>
-    <script src="/dist/js/script.min.js"></script><script>hljs.initHighlightingOnLoad();</script>
+    <script src="/dist/js/script.min.js"></script>
   </body>
 </html>
