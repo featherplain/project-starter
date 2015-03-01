@@ -4,10 +4,11 @@
 /* common
 /* ======================================= */
 
+/* l-container */
 .l-container {
 	@extend %baseWidth;
 }
-
+/* sprite images */
 .red-star {
 	@include sprite($icon_star-red);
 }
@@ -16,4 +17,25 @@
 }
 .blue-star {
 	@include sprite($icon_star-blue);
+}
+/* modal */
+.modal {
+	&__content {
+		box-sizing: border-box;
+		max-width: 960px;
+		width: 100%;
+		background-color: #FFF;
+		padding: 40px;
+		margin: 0 auto;
+	}
+	&__btn {
+		display: inline-block;
+		padding: 8px 10px;
+		border: 1px solid $colorLink;
+		border-radius: 8px;
+		line-height: 1.0;
+		&--dismiss {
+			@extend .modal__btn;
+		}
+	}
 }

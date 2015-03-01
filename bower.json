@@ -14,7 +14,8 @@
   ],
   "dependencies": {
     "bxSlider": "latest",
-    "highlightjs": "latest"
+    "highlightjs": "latest",
+    "magnific-popup": "latest"
   },
   "overrides": {
     "bxSlider": {
@@ -30,6 +31,13 @@
       "main": [
         "**/highlight.pack.js",
         "**/monokai.css"
+      ],
+      "dependencies": null
+    },
+    "magnific-popup": {
+      "main": [
+        "**/jquery.magnific-popup.min.js",
+        "**/magnific-popup.css"
       ],
       "dependencies": null
     }

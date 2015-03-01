@@ -32,7 +32,7 @@ var paths = {
 // JavaScript
   'jsAppFiles'  : 'src/js/app/*.js',
   'jsLibFiles'  : 'src/js/lib/*.js',
-  'jsDir'       : 'src/js',
+  'jsFiles'       : 'src/js/**/*.js',
   'jsDest'      : 'dist/js',
 // scss
   'scssDest'    : 'src/scss',
@@ -99,7 +99,9 @@ gulp.task('sprite', function() {
   .pipe($.spritesmith({
     imgName: 'sprite.png',
     imgPath: '/' + paths.imgDest + '/sprite.png',
-    cssName: '_module-sprite.scss'
+    cssName: '_module-sprite.scss',
+    algorithm: 'top-down',
+    padding: 20
   }));
   spriteData.img.pipe(gulp.dest(paths.imgDest));
   spriteData.css.pipe(gulp.dest(paths.scssDest + '/module'));
@@ -178,7 +180,7 @@ gulp.task('watch', function() {
   gulp.watch([paths.imgDest + '/sprite/*.png'], ['sprite']);
   gulp.watch([paths.htmlFiles], ['bs-reload']);
   gulp.watch([paths.jadeFiles], ['jade']);
-  gulp.watch([paths.jsDest], ['jsTasks']);
+  gulp.watch([paths.jsFiles], ['jsTasks']);
   gulp.watch([paths.scssFiles], ['rubySass']);
 });
 
