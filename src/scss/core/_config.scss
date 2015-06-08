@@ -3,53 +3,37 @@
 //***********************
 // color
 //***********************
-$colorBase: #333333;
-$colorLink: #999999;
-$colorLinkHover: lighten($colorLink, 15%);
-$colorTitle: #777777;
-$colorTitleBkg: #f5f5f4;
-$colorSelection: $colorLink;
+// primary
+$colorBase          : #333333;
+$colorLink          : #999999;
+$colorLinkHover     : lighten($colorLink, 15%);
+$colorSelection     : $colorLink;
 
 //***********************
-// typography
-//***********************
-$letterSpace: 0.1px;
-$lineHeight: 2.15;
-
-//***********************
-// styles
-//***********************
-$radius2: 2px;
-$radius4: 4px;
-
-//*********************** 
 // path
 //***********************
-$filePath: "dist/img/";
-$filePath: "http://example.com/dist/img";
+$filePath           : "../images/";
 
 //***********************
 // font-family
 //***********************
-// Open Sans & Yu Gothic or Meirio
-// add this code to your website:
-// <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700' rel='stylesheet' type='text/css'>
-$fontFamily: "Helvetica Neue", "Helvetica", "游ゴシック体", "Yu Gothic,", YuGothic "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "ＭＳ Ｐゴシック","MS PGothic",Arial,Sans-Serif;
-// Latin Font
-$fontFamilyEn: 'Open Sans',Sans-Serif;
+// primary
+$fontFamily         : "Helvetica Neue", "Helvetica", "游ゴシック体", "Yu Gothic,", YuGothic "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "ＭＳ Ｐゴシック","MS PGothic",Arial,Sans-Serif;
+// En
+$fontFamilyEn       : "Helvetica Neue", "Helvetica",Sans-Serif;
 // code
-$fontFamilyCode: Menlo,Consolas,Courier,sans-serif;
+$fontFamilyCode     : Menlo,Consolas,Courier,sans-serif;
 
 //***********************
 // block size
 //***********************
 // $containerWidth: ;
-$maxWidth: 100%;
+$maxWidth           : 100%;
 
 //***********************
 // navigation size
 //***********************
+// $menuHeight        : ;
 // $menuItemWidth     : ;
 // $menuItemHeight    : ;
-// $menuHeight        : ;
 // $menuPadding       : ($menuHeight - $menuItemHeight) / 2; // Calclate padding size automatically

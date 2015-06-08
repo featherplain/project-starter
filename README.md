@@ -1,9 +1,9 @@
-myproject
+project starter
 ============
 
 ## Outline
 
-Project starter kit with gulpfile
+Project starter foe web development with gulpfile
 
 * compile jade to html
 * compile sass to css (+ sass-globbing option)
@@ -143,19 +143,6 @@ You'd like to autoprefix specific browsers, open `gulpfile.js` and edit below th
 
 
 reference : [http://pleeease.io/docs/](http://pleeease.io/docs/)
-
-#### syntax highlight
-
-Your code is highlighted with [highlight.js](https://highlightjs.org/). If you'd like to use with specific style, open `bower.json` and edit below these lines. In this project, defalt style is "monokai".
-
->
-	"highlightjs": {
-		"main": [
-			"**/highlight.pack.js",
-			"**/monokai.css"
-		],
-		"dependencies": null
-	}
 
 ## Thanks
 

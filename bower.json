@@ -1,5 +1,5 @@
 {
-  "name": "myproject",
+  "name": "project-starter",
   "version": "0.0.0",
   "authors": [
     "featherplain <info@featherplain.com>"
@@ -13,33 +13,11 @@
     "tests"
   ],
   "dependencies": {
-    "bxSlider": "latest",
-    "highlightjs": "latest",
-    "magnific-popup": "latest"
+    "jquery": "~2.1.3"
   },
-  "overrides": {
-    "bxSlider": {
-      "main": [
-        "**/jquery.bxslider.min.js",
-        "**/jquery.bxslider.css",
-        "**/images/bx_loader.gif",
-        "**/images/controls.png"
-      ],
-      "dependencies": null  
-    },
-    "highlightjs": {
-      "main": [
-        "**/highlight.pack.js",
-        "**/monokai.css"
-      ],
-      "dependencies": null
-    },
-    "magnific-popup": {
-      "main": [
-        "**/jquery.magnific-popup.min.js",
-        "**/magnific-popup.css"
-      ],
-      "dependencies": null
+  "exportsOverride": {
+    "jquery": {
+      "": "**/jquery.js"
     }
   }
 }

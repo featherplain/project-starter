@@ -2,13 +2,10 @@
 * DEPENDENCIES
 ***************************************************************************/
 
-var gulp = require('gulp'),
-  $ = require('gulp-load-plugins')({
-    pattern: ['gulp-*', 'gulp.*'],
-    replaceString: /\bgulp[\-.]/
-  }),
-  browserSync = require('browser-sync')
-  mainBowerFiles = require('main-bower-files')
+var gulp           = require('gulp'),
+    $              = require('gulp-load-plugins')({ pattern: ['gulp-*', 'gulp.*'], replaceString: /\bgulp[\-.]/}),
+    browserSync    = require('browser-sync'),
+    mainBowerFiles = require('main-bower-files')
 //  saveLicense = require('uglify-save-license')
 ;
 
@@ -17,25 +14,26 @@ var gulp = require('gulp'),
 ***************************************************************************/
 
 var paths = {
-  'dest'        : './',
+  'root'        : './',
   'vhost'       : 'example.dev',
   'port'        : 3000,
 // html
-  'htmlDest'    : 'src/html',
-  'htmlFiles'   : 'src/html/*.html',
+  'htmlDest'    : 'dist',
+  'htmlFiles'   : 'dist/*.html',
 // images
-  'imgDest'     : 'dist/img',
-  'imgDir'      : 'src/img',
+  'imgDest'     : 'dist/images',
+  'imgDir'      : 'src/images',
 // jade
   'jadeFiles'   : ['src/jade/*.jade', 'src/jade/**/*.jade'],
   'jadeDir'     : 'src/jade/*.jade',
 // JavaScript
+  'jsDir'       : 'src/js',
   'jsAppFiles'  : 'src/js/app/*.js',
   'jsLibFiles'  : 'src/js/lib/*.js',
-  'jsFiles'       : 'src/js/**/*.js',
+  'jsFiles'     : 'src/js/**/*.js',
   'jsDest'      : 'dist/js',
 // scss
-  'scssDest'    : 'src/scss',
+  'scssDir'     : 'src/scss',
   'scssFiles'   : 'src/scss/**/*.scss',
 // css
   'cssDest'     : 'dist/css',
@@ -55,8 +53,8 @@ gulp.task('bower-init', function(){
     .pipe(gulp.dest(paths.jsDir + '/lib'))
     .pipe(filterJs.restore())
     .pipe(filterCss)
-    .pipe($.rename({ prefix: '_module-', extname: '.scss' }))
-    .pipe(gulp.dest('src/scss/module'))
+    .pipe($.rename({ prefix: '_m-', extname: '.scss' }))
+    .pipe(gulp.dest(paths.scssDir + '/module'))
     .pipe(filterCss.restore())
     .pipe(filterImage)
     .pipe(gulp.dest(paths.imgDest))
@@ -79,7 +77,7 @@ gulp.task('bower-init', function(){
 gulp.task('browser-sync', function() {
  browserSync({
    server: {
-     baseDir: paths.dest
+     baseDir: paths.root
    },
    startPath: paths.htmlDest
  });
@@ -99,12 +97,12 @@ gulp.task('sprite', function() {
   .pipe($.spritesmith({
     imgName: 'sprite.png',
     imgPath: '/' + paths.imgDest + '/sprite.png',
-    cssName: '_module-sprite.scss',
+    cssName: '_m-sprite.scss',
     algorithm: 'top-down',
     padding: 20
   }));
   spriteData.img.pipe(gulp.dest(paths.imgDest));
-  spriteData.css.pipe(gulp.dest(paths.scssDest + '/module'));
+  spriteData.css.pipe(gulp.dest(paths.scssDir + '/module'));
 });
 
 /*******************************************************************************
@@ -158,14 +156,16 @@ gulp.task('rubySass', function () {
     .pipe($.plumber())
     .pipe($.rubySass({
       r: 'sass-globbing',
-      'sourcemap=none': true
+      'sourcemap=none': true,
+      style: 'expanded'
     }))
     .pipe($.filter('*.css'))
     .pipe($.pleeease({
       autoprefixer: {
         browsers: ['last 2 versions']
       },
-      sourcemaps: true
+      sourcemaps: true,
+      minifier: false
     }))
     .pipe($.filter('*.css').restore())
     .pipe(gulp.dest(paths.cssDest))

@@ -6,12 +6,12 @@ html(xmlns:og="http://ogp.me/ns#", xmlns:fb='https://www.facebook.com/2008/fbml'
     block meta
       meta(name='description', content=description)
       meta(name='keywords', content=keywords)
-      mera(name='viewport', content='width=device-width, initial-scale=1.0')
+      meta(name='viewport', content='width=device-width, initial-scale=1.0')
     block link
       link(rel='icon', href='/favicon.png')
       link(rel='shortcut icon', href='/favicon.ico')
       link(rel='apple-touch-icon', href='/apple-touch-icon.png')
-      link(rel='stylesheet', href='/dist/css/app.css')
+      link(rel='stylesheet', href='css/app.css')
     block script
       //- != '\n<!--[if lt IE 9]>'
       //- script(src="dist/js/app/html5shiv-printshiv.js")
@@ -20,5 +20,5 @@ html(xmlns:og="http://ogp.me/ns#", xmlns:fb='https://www.facebook.com/2008/fbml'
     block body
     block scriptFooter
       script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js")
-      script(src="/dist/js/lib.min.js")
-      script(src="/dist/js/script.min.js")
+      script(src="js/lib.min.js")
+      script(src="js/script.min.js")
