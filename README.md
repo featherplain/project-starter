@@ -8,6 +8,7 @@ Project starter for web development with gulp
 * compile jade to html
 * compile sass to css (+ sass-globbing option)
 * combine js files and minify
+* minify image files
 * generate css sprite
 * Browser-Sync support
 
@@ -133,18 +134,15 @@ If you'd like to connect BrowserSync with local server, edit `gulpfile.js`.
     // });
     ```
 
-reference : [http://www.browsersync.io/docs/gulp/](http://www.browsersync.io/docs/gulp/)
+If you need more informations, see [BrowserSync docs](http://www.browsersync.io/docs/gulp/).
 
 #### autoprefix
 
 You'd like to autoprefix specific browsers, open `gulpfile.js` and edit below these lines.
 
-    autoprefixer: {
-      browsers: ['last 2 versions']
-    },
+    .pipe($.autoprefixer({
+      browsers: ['last 2 versions', 'ie 10', 'ie 9'],
+      cascade: false
+    }))
 
-reference : [http://pleeease.io/docs/](http://pleeease.io/docs/)
-
-## Thanks
-
-This project forked from [vwxyutarooo/gulp-web-starter](https://github.com/vwxyutarooo/gulp-web-starter).
+If you need more informations, see [gulp-autoprefixer](https://github.com/sindresorhus/gulp-autoprefixer).
