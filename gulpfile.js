@@ -34,10 +34,9 @@ var paths = {
   'jsDest'      : 'dist/js/',
 // scss
   'scssDir'     : 'src/scss/',
-  'scssFiles'   : 'src/scss/**/*.scss',
 // css
   'cssDest'     : 'dist/css/',
-}
+};
 
 /***************************************************************************
 * bower-init
@@ -158,26 +157,54 @@ gulp.task('jsTasks', [
 * Sass tasks
 ***************************************************************************/
 
-gulp.task('rubySass', function () {
-  gulp.src(paths.scssFiles)
-    .pipe($.plumber())
-    .pipe($.rubySass({
-      r: 'sass-globbing',
-      'sourcemap=none': true,
-      style: 'expanded'
+gulp.task('sass', function () {
+  return $.rubySass(paths.scssDir, {
+      require   : 'sass-globbing',
+      sourcemap : false,
+      loadPath  : []
+    })
+    .on('error', function(err) { console.error('Error!', err.message); })
+    .pipe($.autoprefixer({
+      browsers: ['last 2 versions', 'ie 10', 'ie 9'],
+      cascade: false
     }))
-    .pipe($.filter('*.css'))
-    .pipe($.pleeease({
-      autoprefixer: {
-        browsers: ['last 2 versions']
-      },
-      sourcemaps: true,
-      minifier: false
-    }))
-    .pipe($.filter('*.css').restore())
+    .pipe($.csso())
     .pipe(gulp.dest(paths.cssDest))
+    .pipe($.filter('**/*.css'))
     .pipe(browserSync.reload({ stream: true }));
 });
+
+// gulp.task('scss', function() {
+//     return $.rubySass(paths.srcScss, rubySassConf)
+//     .on('error', function(err) { console.error('Error!', err.message); })
+//     .pipe($.autoprefixer({
+//       browsers: ['> 1%', 'last 2 versions', 'ie 10', 'ie 9'],
+//       cascade: false
+//     }))
+//     .pipe($.csso())
+//     .pipe(gulp.dest(paths.destCss))
+//     .pipe($.filter('**/*.css'))
+//     .pipe(browserSync.reload({ stream: true }));
+// });
+
+// gulp.task('sass', function() {
+//   return gulpLoadPlugins.rubySass(scssPath, {
+//       loadPath: [bowerPath + 'foundation/scss', bowerPath + 'fontawesome/scss'],
+//       style: 'nested',
+//       bundleExec: false,
+//       require: 'sass-globbing',
+//       sourcemap: false
+//     })
+//     .on('error', function(err) { console.error('Error!', err.message); })
+//     .pipe(gulpLoadPlugins.autoprefixer({
+//       browsers: ['last 2 versions', 'ie 10', 'ie 9']
+//     }))
+//     .pipe(gulpLoadPlugins.csscomb())
+//     .pipe(gulpLoadPlugins.csso())
+//     .pipe(gulpLoadPlugins.csslint())
+//     .pipe(gulp.dest(cssPath));
+// });
+
 
 /***************************************************************************
 * gulp tasks
@@ -188,7 +215,7 @@ gulp.task('watch', function() {
   gulp.watch([paths.htmlFiles], ['bs-reload']);
   gulp.watch([paths.jadeFiles], ['jade']);
   gulp.watch([paths.jsFiles], ['jsTasks']);
-  gulp.watch([paths.scssFiles], ['rubySass']);
+  gulp.watch([paths.scssDir + '**/*.scss'], ['sass']);
 });
 
 gulp.task('default', [
@@ -197,7 +224,7 @@ gulp.task('default', [
   'image-min',
   'jade',
   'jsTasks',
-  'rubySass',
+  'sass',
   'sprite',
   'watch'
 ]);
