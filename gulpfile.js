@@ -174,38 +174,6 @@ gulp.task('sass', function () {
     .pipe(browserSync.reload({ stream: true }));
 });
 
-// gulp.task('scss', function() {
-//     return $.rubySass(paths.srcScss, rubySassConf)
-//     .on('error', function(err) { console.error('Error!', err.message); })
-//     .pipe($.autoprefixer({
-//       browsers: ['> 1%', 'last 2 versions', 'ie 10', 'ie 9'],
-//       cascade: false
-//     }))
-//     .pipe($.csso())
-//     .pipe(gulp.dest(paths.destCss))
-//     .pipe($.filter('**/*.css'))
-//     .pipe(browserSync.reload({ stream: true }));
-// });
-
-// gulp.task('sass', function() {
-//   return gulpLoadPlugins.rubySass(scssPath, {
-//       loadPath: [bowerPath + 'foundation/scss', bowerPath + 'fontawesome/scss'],
-//       style: 'nested',
-//       bundleExec: false,
-//       require: 'sass-globbing',
-//       sourcemap: false
-//     })
-//     .on('error', function(err) { console.error('Error!', err.message); })
-//     .pipe(gulpLoadPlugins.autoprefixer({
-//       browsers: ['last 2 versions', 'ie 10', 'ie 9']
-//     }))
-//     .pipe(gulpLoadPlugins.csscomb())
-//     .pipe(gulpLoadPlugins.csso())
-//     .pipe(gulpLoadPlugins.csslint())
-//     .pipe(gulp.dest(cssPath));
-// });
-
-
 /***************************************************************************
 * gulp tasks
 ***************************************************************************/
