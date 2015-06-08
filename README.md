@@ -81,45 +81,57 @@ Basically source file placed in `src/`. It passed to `dist/` as destination thro
 
 1.  Install gulp.
 
-    $ npm install -g gulp
+
+        $ npm install -g gulp
+
 
 2.  Install some dependencies.
 
-    $ cd path/to/directory ; npm install
+
+        $ cd path/to/directory ; npm install
   
+
 3.  Install sass-globbing.
 
-    $ gem install sass-globbing
+
+        $ gem install sass-globbing
+
 
 4.  Install bower components and initialize them.
 
-    $ npm run gulp-init
+
+        $ npm run gulp-init
+    
 
 5.  Run gulp.
 
-    $ gulp
+
+        $ gulp
+
 
 ### Options
 
 #### Connect with local server
 
-If you'd like to connect "browser-sync" with local server, edit `gulpfile.js`.
+If you'd like to connect BrowserSync with local server, edit `gulpfile.js`.
 
 1. Set hostname on line 21.
 
->
-  'vhost': 'example.dev'
+    ```
+    'vhost': 'example.dev'
+    ```
 
 2. Uncomment below these lines.
 
->
-  // Local server
-  // gulp.task('browser-sync', function() {
-  //    browserSync({
-  //      proxy: paths.vhost,
-  //      open: 'external'
-  //    });
-  // });
+    ```
+    // Local server
+    // gulp.task('browser-sync', function() {
+    //    browserSync({
+    //      proxy: paths.vhost,
+    //      open: 'external'
+    //    });
+    // });
+    ```
 
 reference : [http://www.browsersync.io/docs/gulp/](http://www.browsersync.io/docs/gulp/)
 
@@ -127,11 +139,9 @@ reference : [http://www.browsersync.io/docs/gulp/](http://www.browsersync.io/doc
 
 You'd like to autoprefix specific browsers, open `gulpfile.js` and edit below these lines.
 
->
-  autoprefixer: {
+    autoprefixer: {
       browsers: ['last 2 versions']
-  },
-
+    },
 
 reference : [http://pleeease.io/docs/](http://pleeease.io/docs/)
 
