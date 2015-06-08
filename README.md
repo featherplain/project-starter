@@ -3,7 +3,7 @@ project starter
 
 ## Outline
 
-Project starter foe web development with gulpfile
+Project starter for web development with gulp
 
 * compile jade to html
 * compile sass to css (+ sass-globbing option)
@@ -24,31 +24,26 @@ Project starter foe web development with gulpfile
 Basically source file placed in `src/`. It passed to `dist/` as destination through the "gulp".
 ~~~~
 .
+├── LICENSE.md
 ├── README.md
-├── bower_components
 ├── bower.json
+├── bower_components
 ├── dist
 │   ├── css
-│   │   └── app.css
-│   ├── img
-│   │   ├── bx_loader.gif
-│   │   ├── controls.png
-│   │   └── sprite.png
+│   │   └── app.css
+│   ├── images
+│   │   ├── pages
+│   │   └── sprite.png
+│   ├── index.html
 │   └── js
 │       ├── lib.min.js
 │       └── script.min.js
 ├── gulpfile.js
-├── node_modules
 ├── package.json
 ├── setting.json
 ├── src
-│   ├── html
-│   │   └── index.html
-│   ├── img
+│   ├── images
 │   │   └── sprite
-│   │       ├── icon_star-red.png
-│   │       ├── icon_star-yellow.png
-│   │       └── icon_star_blue.png
 │   ├── jade
 │   │   ├── inc
 │   │   │   ├── core
@@ -56,33 +51,29 @@ Basically source file placed in `src/`. It passed to `dist/` as destination thro
 │   │   │   │   ├── _config.jade
 │   │   │   │   └── _mixins.jade
 │   │   │   ├── layout
-│   │   │   │   ├── _layout-footer.jade
-│   │   │   │   └── _layout-header.jade
-│   │   │   └── modules
-│   │   │       └── _module-button.jade
+│   │   │   │   ├── _l-footer.jade
+│   │   │   │   └── _l-header.jade
+│   │   │   └── module
+│   │   │       └── _m-buttons.jade
 │   │   └── index.jade
 │   ├── js
 │   │   ├── app
 │   │   │   └── script.js
 │   │   └── lib
-│   │       ├── highlight.pack.js
-│   │       └── jquery.bxslider.min.js
+│   │       └── jquery.js
 │   └── scss
 │       ├── app.scss
 │       ├── core
 │       │   ├── _config.scss
 │       │   ├── _default.scss
 │       │   ├── _mixins.scss
-│       │   └── _normalize.scss
+│       │   └── _placeholder.scss
 │       ├── layout
-│       │   ├── _layout-common.scss
-│       │   ├── _layout-footer.scss
-│       │   └── _layout-header.scss
+│       │   ├── _l-footer.scss
+│       │   └── _l-header.scss
 │       └── module
-│           ├── _module-buttons.scss
-│           ├── _module-jquery.bxslider.scss
-│           ├── _module-monokai.scss
-│           └── _module-sprite.scss
+│           ├── _m-buttons.scss
+│           └── _m-sprite.scss
 └── style.css
 ~~~~
 
@@ -90,23 +81,23 @@ Basically source file placed in `src/`. It passed to `dist/` as destination thro
 
 1.  Install gulp.
 
-		$ npm install -g gulp
+    $ npm install -g gulp
 
 2.  Install some dependencies.
 
-		$ cd path/to/directory ; npm install
-	
+    $ cd path/to/directory ; npm install
+  
 3.  Install sass-globbing.
 
-		$ gem install sass-globbing
+    $ gem install sass-globbing
 
 4.  Install bower components and initialize them.
 
-		$ npm run gulp-init
+    $ npm run gulp-init
 
 5.  Run gulp.
 
-		$ gulp
+    $ gulp
 
 ### Options
 
@@ -117,18 +108,18 @@ If you'd like to connect "browser-sync" with local server, edit `gulpfile.js`.
 1. Set hostname on line 21.
 
 >
-	'vhost': 'example.dev'
+  'vhost': 'example.dev'
 
 2. Uncomment below these lines.
 
 >
-	// Local server
-	// gulp.task('browser-sync', function() {
-	// 		browserSync({
-	// 			proxy: paths.vhost,
-	// 			open: 'external'
-	// 		});
-	// });
+  // Local server
+  // gulp.task('browser-sync', function() {
+  //    browserSync({
+  //      proxy: paths.vhost,
+  //      open: 'external'
+  //    });
+  // });
 
 reference : [http://www.browsersync.io/docs/gulp/](http://www.browsersync.io/docs/gulp/)
 
@@ -137,13 +128,13 @@ reference : [http://www.browsersync.io/docs/gulp/](http://www.browsersync.io/doc
 You'd like to autoprefix specific browsers, open `gulpfile.js` and edit below these lines.
 
 >
-	autoprefixer: {
-  		browsers: ['last 2 versions']
-	},
+  autoprefixer: {
+      browsers: ['last 2 versions']
+  },
 
 
 reference : [http://pleeease.io/docs/](http://pleeease.io/docs/)
 
 ## Thanks
 
-This project forked from [vwxyutarooo/mygulpfile](https://github.com/vwxyutarooo/mygulpfile).
+This project forked from [vwxyutarooo/gulp-web-starter](https://github.com/vwxyutarooo/gulp-web-starter).
