@@ -18,25 +18,25 @@ var paths = {
   'vhost'       : 'example.dev',
   'port'        : 3000,
 // html
-  'htmlDest'    : 'dist',
-  'htmlFiles'   : 'dist/*.html',
+  'htmlDest'    : 'dist/',
+  'htmlFiles'   : 'dist/*.html/',
 // images
-  'imgDest'     : 'dist/images',
-  'imgDir'      : 'src/images',
+  'imgDest'     : 'dist/images/',
+  'imgDir'      : 'src/images/',
 // jade
   'jadeFiles'   : ['src/jade/*.jade', 'src/jade/**/*.jade'],
   'jadeDir'     : 'src/jade/*.jade',
 // JavaScript
-  'jsDir'       : 'src/js',
+  'jsDir'       : 'src/js/',
   'jsAppFiles'  : 'src/js/app/*.js',
   'jsLibFiles'  : 'src/js/lib/*.js',
   'jsFiles'     : 'src/js/**/*.js',
-  'jsDest'      : 'dist/js',
+  'jsDest'      : 'dist/js/',
 // scss
-  'scssDir'     : 'src/scss',
+  'scssDir'     : 'src/scss/',
   'scssFiles'   : 'src/scss/**/*.scss',
 // css
-  'cssDest'     : 'dist/css',
+  'cssDest'     : 'dist/css/',
 }
 
 /***************************************************************************
@@ -50,11 +50,11 @@ gulp.task('bower-init', function(){
   var filterImage = $.filter(['*.png', '*.gif', '*.jpg']);
   return gulp.src(mainBowerFiles())
     .pipe(filterJs)
-    .pipe(gulp.dest(paths.jsDir + '/lib'))
+    .pipe(gulp.dest(paths.jsDir + 'lib/'))
     .pipe(filterJs.restore())
     .pipe(filterCss)
     .pipe($.rename({ prefix: '_m-', extname: '.scss' }))
-    .pipe(gulp.dest(paths.scssDir + '/module'))
+    .pipe(gulp.dest(paths.scssDir + 'module/'))
     .pipe(filterCss.restore())
     .pipe(filterImage)
     .pipe(gulp.dest(paths.imgDest))
@@ -92,17 +92,24 @@ gulp.task('bs-reload', function() {
 * image tasks
 ***************************************************************************/
 
+gulp.task('image-min', function() {
+  return gulp.src(paths.imgDest + 'pages/**/*.*')
+    .pipe($.imagemin({ optimizationLevel: 3 }))
+    .pipe(gulp.dest(paths.imgDest))
+    .pipe(browserSync.reload({ stream: true }));
+});
+
 gulp.task('sprite', function() {
-  var spriteData = gulp.src(paths.imgDir + '/sprite/*.png')
+  var spriteData = gulp.src(paths.imgDir + 'sprite/*.png')
   .pipe($.spritesmith({
     imgName: 'sprite.png',
-    imgPath: '/' + paths.imgDest + '/sprite.png',
+    imgPath: '../images/sprite.png',
     cssName: '_m-sprite.scss',
     algorithm: 'top-down',
     padding: 20
   }));
   spriteData.img.pipe(gulp.dest(paths.imgDest));
-  spriteData.css.pipe(gulp.dest(paths.scssDir + '/module'));
+  spriteData.css.pipe(gulp.dest(paths.scssDir + 'module'));
 });
 
 /*******************************************************************************
@@ -177,7 +184,7 @@ gulp.task('rubySass', function () {
 ***************************************************************************/
 
 gulp.task('watch', function() {
-  gulp.watch([paths.imgDest + '/sprite/*.png'], ['sprite']);
+  gulp.watch([paths.imgDest + 'sprite/*.png'], ['sprite']);
   gulp.watch([paths.htmlFiles], ['bs-reload']);
   gulp.watch([paths.jadeFiles], ['jade']);
   gulp.watch([paths.jsFiles], ['jsTasks']);
@@ -187,6 +194,7 @@ gulp.task('watch', function() {
 gulp.task('default', [
   'browser-sync',
   'bs-reload',
+  'image-min',
   'jade',
   'jsTasks',
   'rubySass',
