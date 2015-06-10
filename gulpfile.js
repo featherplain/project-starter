@@ -122,7 +122,7 @@ gulp.task('sprite-svg', function() {
       dirname: './',
       prefix: 'sprite' + '.'
     }))
-    .pipe(gulp.dest(paths.imgDest + 'sprite-svg'));
+    .pipe(gulp.dest(paths.imgDest));
 });
 
 /*******************************************************************************

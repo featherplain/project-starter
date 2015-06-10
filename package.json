@@ -29,8 +29,8 @@
     "gulp.spritesmith": "latest",
     "gulp-svg-sprite": "latest",
     "gulp-uglify": "latest",
-    "main-bower-files": "latest",
-    "merge-stream": "latest",
-    "path": "latest"
+    "main-bower-files": "latest"
+    // "merge-stream": "latest",
+    // "path": "latest"
   }
 }
