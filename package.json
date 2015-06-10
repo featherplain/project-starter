@@ -27,7 +27,10 @@
     "gulp-rename": "latest",
     "gulp-ruby-sass": "1.0.1",
     "gulp.spritesmith": "latest",
+    "gulp-svg-sprite": "latest",
     "gulp-uglify": "latest",
-    "main-bower-files": "latest"
+    "main-bower-files": "latest",
+    "merge-stream": "latest",
+    "path": "latest"
   }
 }
