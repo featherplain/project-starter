@@ -94,7 +94,7 @@ gulp.task('bs-reload', function() {
 gulp.task('image-min', function() {
   return gulp.src(paths.imgDest + 'pages/**/*.*')
     .pipe($.imagemin({ optimizationLevel: 3 }))
-    .pipe(gulp.dest(paths.imgDest))
+    .pipe(gulp.dest(paths.imgDest + 'pages/'))
     .pipe(browserSync.reload({ stream: true }));
 });
 
