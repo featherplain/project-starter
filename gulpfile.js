@@ -111,6 +111,20 @@ gulp.task('sprite', function() {
   spriteData.css.pipe(gulp.dest(paths.scssDir + 'module'));
 });
 
+gulp.task('sprite-svg', function() {
+  return gulp.src(paths.imgDir + 'sprite-svg/*.svg')
+    .pipe($.svgSprite({
+      dest: './',
+      mode: { symbol: { dest: './' } }
+    }))
+    .pipe($.rename({
+      basename: 'symbol',
+      dirname: './',
+      prefix: 'sprite' + '.'
+    }))
+    .pipe(gulp.dest(paths.imgDest));
+});
+
 /*******************************************************************************
  * Jade Tasks
 *******************************************************************************/
@@ -180,6 +194,7 @@ gulp.task('sass', function () {
 
 gulp.task('watch', function() {
   gulp.watch([paths.imgDest + 'sprite/*.png'], ['sprite']);
+  gulp.watch([paths.imgDir + 'sprite-svg/*.svg'], ['sprite-svg'])
   gulp.watch([paths.htmlFiles], ['bs-reload']);
   gulp.watch([paths.jadeFiles], ['jade']);
   gulp.watch([paths.jsFiles], ['jsTasks']);
@@ -194,6 +209,7 @@ gulp.task('default', [
   'jsTasks',
   'sass',
   'sprite',
+  'sprite-svg',
   'watch'
 ]);
 
