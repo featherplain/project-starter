@@ -1,7 +1,7 @@
 {
   "name": "project-starter",
-  "version": "0.0.0",
-  "description": "project starter for web development with gulp",
+  "version": "0.0.1",
+  "description": "Project starter for web development with gulp",
   "uri": "https://github.com/featherplain/project-starter",
   "main": "gulpfile.js",
   "scripts": {

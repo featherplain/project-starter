@@ -5,12 +5,14 @@ project starter
 
 Project starter for web development with gulp
 
-* compile jade to html
-* compile sass to css (+ sass-globbing option)
-* combine js files and minify
+* Jade to HTML
+* Sass to CSS
+* combine JS files and minify
 * minify image files
-* generate css sprite
-* Browser-Sync support
+* generate CSS sprite
+* generate svg sprite
+* BrowserSync
+* main-bower-files
 
 ### Requires
 
@@ -18,7 +20,7 @@ Project starter for web development with gulp
 * Node.js
 * npm
 * Ruby
-* Sass over3.1
+* Sass >=3.4
 * sass-globbing
 
 ## File structure
@@ -34,17 +36,27 @@ Basically source file placed in `src/`. It passed to `dist/` as destination thro
 │   │   └── app.css
 │   ├── images
 │   │   ├── pages
-│   │   └── sprite.png
+│   │   │   └── dummy.png
+│   │   ├── sprite.png
+│   │   └── sprite.symbol.svg
 │   ├── index.html
 │   └── js
 │       ├── lib.min.js
 │       └── script.min.js
 ├── gulpfile.js
+├── node_modules
 ├── package.json
 ├── setting.json
 ├── src
 │   ├── images
-│   │   └── sprite
+│   │   ├── sprite
+│   │   │   ├── icon_starBlue.png
+│   │   │   ├── icon_starRed.png
+│   │   │   └── icon_starYellow.png
+│   │   └── sprite-svg
+│   │       ├── icon_starBlue.svg
+│   │       ├── icon_starRed.svg
+│   │       └── icon_starYellow.svg
 │   ├── jade
 │   │   ├── inc
 │   │   │   ├── core
