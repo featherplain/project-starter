@@ -14,28 +14,23 @@ var gulp           = require('gulp'),
 ***************************************************************************/
 
 var paths = {
-  'root'        : './',
-  'vhost'       : 'example.dev',
-  'port'        : 3000,
+  'root'           : './',
+  'vhost'          : 'example.dev',
+  'port'           : 3000,
 // html
-  'htmlDest'    : 'dist/',
-  'htmlFiles'   : 'dist/*.html/',
+  'htmlDest'       : 'dist/',
 // images
-  'imgDest'     : 'dist/images/',
-  'imgDir'      : 'src/images/',
+  'imageDest'      : 'dist/images/',
+  'imagePath'      : 'src/images/',
 // jade
-  'jadeFiles'   : ['src/jade/*.jade', 'src/jade/**/*.jade'],
-  'jadeDir'     : 'src/jade/*.jade',
+  'jadePath'       : 'src/jade/',
 // JavaScript
-  'jsDir'       : 'src/js/',
-  'jsAppFiles'  : 'src/js/app/*.js',
-  'jsLibFiles'  : 'src/js/lib/*.js',
-  'jsFiles'     : 'src/js/**/*.js',
-  'jsDest'      : 'dist/js/',
+  'jsPath'         : 'src/js/',
+  'jsDest'         : 'dist/js/',
 // scss
-  'scssDir'     : 'src/scss/',
+  'scssPath'       : 'src/scss/',
 // css
-  'cssDest'     : 'dist/css/',
+  'cssDest'        : 'dist/css/',
 };
 
 /***************************************************************************
@@ -49,19 +44,19 @@ gulp.task('bower-init', function(){
   var filterImage = $.filter(['*.png', '*.gif', '*.jpg']);
   return gulp.src(mainBowerFiles())
     .pipe(filterJs)
-    .pipe(gulp.dest(paths.jsDir + 'lib/'))
+    .pipe(gulp.dest(paths.jsPath + 'lib/'))
     .pipe(filterJs.restore())
     .pipe(filterCss)
     .pipe($.rename({ prefix: '_m-', extname: '.scss' }))
-    .pipe(gulp.dest(paths.scssDir + 'module/'))
+    .pipe(gulp.dest(paths.scssPath + 'module/'))
     .pipe(filterCss.restore())
     .pipe(filterImage)
-    .pipe(gulp.dest(paths.imgDest))
+    .pipe(gulp.dest(paths.imageDest))
     .pipe(filterImage.restore());
 });
 
 /***************************************************************************
-* browser-sync
+* BrowserSync
 ***************************************************************************/
 
 // Local server
@@ -92,14 +87,14 @@ gulp.task('bs-reload', function() {
 ***************************************************************************/
 
 gulp.task('image-min', function() {
-  return gulp.src(paths.imgDest + 'pages/**/*.*')
+  return gulp.src(paths.imageDest + 'pages/**/*.*')
     .pipe($.imagemin({ optimizationLevel: 3 }))
-    .pipe(gulp.dest(paths.imgDest + 'pages/'))
+    .pipe(gulp.dest(paths.imageDest + 'pages/'))
     .pipe(browserSync.reload({ stream: true }));
 });
 
 gulp.task('sprite', function() {
-  var spriteData = gulp.src(paths.imgDir + 'sprite/*.png')
+  var spriteData = gulp.src(paths.imagePath + 'sprite/*.png')
   .pipe($.spritesmith({
     imgName: 'sprite.png',
     imgPath: '../images/sprite.png',
@@ -107,12 +102,12 @@ gulp.task('sprite', function() {
     algorithm: 'top-down',
     padding: 20
   }));
-  spriteData.img.pipe(gulp.dest(paths.imgDest));
-  spriteData.css.pipe(gulp.dest(paths.scssDir + 'module'));
+  spriteData.img.pipe(gulp.dest(paths.imageDest));
+  spriteData.css.pipe(gulp.dest(paths.scssPath + 'module'));
 });
 
 gulp.task('sprite-svg', function() {
-  return gulp.src(paths.imgDir + 'sprite-svg/*.svg')
+  return gulp.src(paths.imagePath + 'sprite-svg/*.svg')
     .pipe($.svgSprite({
       dest: './',
       mode: { symbol: { dest: './' } }
@@ -122,7 +117,7 @@ gulp.task('sprite-svg', function() {
       dirname: './',
       prefix: 'sprite' + '.'
     }))
-    .pipe(gulp.dest(paths.imgDest));
+    .pipe(gulp.dest(paths.imageDest));
 });
 
 /*******************************************************************************
@@ -130,7 +125,7 @@ gulp.task('sprite-svg', function() {
 *******************************************************************************/
 
 gulp.task('jade', function() {
-  return gulp.src(paths.jadeDir)
+  return gulp.src(paths.jadePath + '*.jade')
     .pipe($.data(function(file) {
       return require('./setting.json');
     }))
@@ -145,7 +140,7 @@ gulp.task('jade', function() {
 ***************************************************************************/
 
 gulp.task('jsLib', function() {
-  return gulp.src(paths.jsLibFiles)
+  return gulp.src(paths.jsPath + 'lib/*.js')
     .pipe($.concat('lib.js'))
     .pipe($.uglify())
     .pipe($.rename({ suffix: '.min' }))
@@ -154,7 +149,7 @@ gulp.task('jsLib', function() {
 });
 
 gulp.task('jsApp', function() {
-  return gulp.src(paths.jsAppFiles)
+  return gulp.src(paths.jsPath + 'app/*.js')
     .pipe($.concat('script.js'))
     .pipe($.uglify())
     .pipe($.rename({ suffix: '.min' }))
@@ -172,7 +167,7 @@ gulp.task('jsTasks', [
 ***************************************************************************/
 
 gulp.task('sass', function () {
-  return $.rubySass(paths.scssDir, {
+  return $.rubySass(paths.scssPath, {
       require   : 'sass-globbing',
       sourcemap : false,
       loadPath  : []
@@ -193,12 +188,12 @@ gulp.task('sass', function () {
 ***************************************************************************/
 
 gulp.task('watch', function() {
-  gulp.watch([paths.imgDest + 'sprite/*.png'], ['sprite']);
-  gulp.watch([paths.imgDir + 'sprite-svg/*.svg'], ['sprite-svg'])
-  gulp.watch([paths.htmlFiles], ['bs-reload']);
-  gulp.watch([paths.jadeFiles], ['jade']);
-  gulp.watch([paths.jsFiles], ['jsTasks']);
-  gulp.watch([paths.scssDir + '**/*.scss'], ['sass']);
+  gulp.watch([paths.imageDest + 'sprite/*.png'], ['sprite']);
+  gulp.watch([paths.imagePath + 'sprite-svg/*.svg'], ['sprite-svg'])
+  gulp.watch([paths.htmlDest  + '*.html'], ['bs-reload']);
+  gulp.watch([paths.jadePath  + '**/*.jade'], ['jade']);
+  gulp.watch([paths.jsPath    + '**/*.js'], ['jsTasks']);
+  gulp.watch([paths.scssPath  + '**/*.scss'], ['sass']);
 });
 
 gulp.task('default', [
