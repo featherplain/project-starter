@@ -6,8 +6,7 @@ var gulp           = require('gulp'),
     $              = require('gulp-load-plugins')({ pattern: ['gulp-*', 'gulp.*'], replaceString: /\bgulp[\-.]/}),
     argv           = require('yargs').argv,
     browserSync    = require('browser-sync'),
-    mainBowerFiles = require('main-bower-files')
-//  saveLicense = require('uglify-save-license')
+    runSequence    = require('run-sequence')
 ;
 
 /***************************************************************************
@@ -34,26 +33,22 @@ var paths = {
   'cssDest'        : 'dist/css/',
 };
 
-/***************************************************************************
-* bower-init
-***************************************************************************/
+var rubySassConf = {
+  loadPath       : ['bower_components/foundation/scss'],
+  require        : 'sass-globbing',
+  sourcemap      : false,
+  style          : 'expanded'
+};
 
-gulp.task('bower-init', function(){
-  var filterJs = $.filter('*.js');
-  var filterCss = $.filter('*.css');
-  var filterScss = $.filter('*.scss');
-  var filterImage = $.filter(['*.png', '*.gif', '*.jpg']);
-  return gulp.src(mainBowerFiles())
-    .pipe(filterJs)
-    .pipe(gulp.dest(paths.jsPath + 'lib/'))
-    .pipe(filterJs.restore())
-    .pipe(filterCss)
-    .pipe($.rename({ prefix: '_m-', extname: '.scss' }))
-    .pipe(gulp.dest(paths.scssPath + 'module/'))
-    .pipe(filterCss.restore())
-    .pipe(filterImage)
-    .pipe(gulp.dest(paths.imageDest))
-    .pipe(filterImage.restore());
+/***************************************************************************
+ * initializing bower_components
+**************************************************************************/
+
+gulp.task('bower:install', $.shell.task(['bower install']));
+
+gulp.task('install:foundation', function() {
+  return gulp.src('src/shell/', {read: false})
+    .pipe($.shell(['bash src/shell/foundation.sh']));
 });
 
 /***************************************************************************
@@ -161,17 +156,12 @@ gulp.task('jsTasks', [
 ***************************************************************************/
 
 gulp.task('sass', function () {
-  return $.rubySass(paths.scssPath, {
-      require   : 'sass-globbing',
-      sourcemap : false,
-      loadPath  : []
-    })
+  return $.rubySass(paths.scssPath, rubySassConf)
     .on('error', function(err) { console.error('Error!', err.message); })
     .pipe($.autoprefixer({
-      browsers: ['last 2 versions', 'ie 10', 'ie 9'],
+      browsers: 'last 2 versions',
       cascade: false
     }))
-    .pipe($.csso())
     .pipe(gulp.dest(paths.cssDest))
     .pipe($.filter('**/*.css'))
     .pipe(browserSync.reload({ stream: true }));
@@ -202,7 +192,6 @@ gulp.task('default', [
   'watch'
 ]);
 
-gulp.task('init', [
-  'bower-init',
-  'jsTasks'
-]);
+gulp.task('init', function(cb) {
+  runSequence('bower:install', 'install:foundation', cb);
+});
