@@ -5,6 +5,7 @@
   "uri": "https://github.com/featherplain/project-starter",
   "main": "gulpfile.js",
   "scripts": {
+    "gulp-server": "gulp default --mode server",
   	"gulp-init": "bower install; gulp init",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -29,6 +30,8 @@
     "gulp.spritesmith": "latest",
     "gulp-svg-sprite": "latest",
     "gulp-uglify": "latest",
-    "main-bower-files": "latest"
+    "main-bower-files": "latest",
+    "run-sequence": "^1.1.0",
+    "yargs": "^3.12.0"
   }
 }
