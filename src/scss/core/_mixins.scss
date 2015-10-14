@@ -1,9 +1,9 @@
 @charset "utf-8";
 
-//***********************
+//----------------------------------------------------------------------------*/
 // hasPseudoClass
 // $name
-//***********************
+//----------------------------------------------------------------------------*/
 @mixin hasPseudoClass($loc:false, $position: absolute){
   position: relative;
   @if $loc == before{
@@ -28,10 +28,10 @@
   }
 }
 
-//***********************
+//----------------------------------------------------------------------------*/
 // imageReplace
 // @param $name
-//***********************
+//----------------------------------------------------------------------------*/
 @mixin imageReplace($path, $imgWidth, $imgHeight, $scale: 1, $position: 0 0, $size: 100%, $repeat: no-repeat){
   display: block;
   overflow: hidden;
@@ -44,10 +44,10 @@
   background-repeat: $repeat;
 }
 
-//***********************
+//----------------------------------------------------------------------------*/
 // Sprite css image replacement (Medium size)
 // @param $name
-//***********************
+//----------------------------------------------------------------------------*/
 @mixin sprite-ir($sprite, $scale: 1, $display: block){
   @include sprite-image($sprite);
   $sprite-offset-x: nth($sprite, 3) * $scale;
@@ -63,9 +63,9 @@
 }
 
 
-//***********************
+//----------------------------------------------------------------------------*/
 // web font
-//***********************
+//----------------------------------------------------------------------------*/
 // use genericon
 @mixin genericon($content:'\f100', $fontsize: 16px, $valaign: text-bottom, $position: static, $display: inline-block, $line-height: 1em){
   position: $position;
@@ -89,9 +89,9 @@
   -webkit-font-smoothing: antialiased;
 }
 
-//***********************
+//----------------------------------------------------------------------------*/
 // css graphic
-//***********************
+//----------------------------------------------------------------------------*/
 // Triangle
 @mixin triangle($direction, $width, $height, $color) {
   width: 0;
