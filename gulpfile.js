@@ -84,12 +84,12 @@ gulp.task('sprite', function() {
   .pipe($.spritesmith({
     imgName: 'sprite.png',
     imgPath: '../images/sprite.png',
-    cssName: '_m-sprite.scss',
+    cssName: '_sprite.scss',
     algorithm: 'top-down',
     padding: 20
   }));
   spriteData.img.pipe(gulp.dest(paths.imageDest));
-  spriteData.css.pipe(gulp.dest(paths.scssPath + 'module'));
+  spriteData.css.pipe(gulp.dest(paths.scssPath + 'core'));
 });
 
 gulp.task('sprite-svg', function() {
@@ -153,8 +153,8 @@ gulp.task('jsTasks', [
 /*----------------------------------------------------------------------------*/
 
 gulp.task('sass', function () {
-  return gulp.src(paths.scssPath)
-    .pipe($.changed(paths.cssDest, {extension: '.css'}))
+  return gulp.src(paths.scssPath + '**/*.scss')
+    // .pipe($.changed(paths.cssDest, {extension: '.css'}))
     .pipe($.sourcemaps.init())
     .pipe($.cssGlobbing({ extensions: ['.scss'] }))
     .pipe($.sass(gulpSassConf).on('error', $.sass.logError))
@@ -163,9 +163,9 @@ gulp.task('sass', function () {
       cascade: false
     }))
     .pipe($.sourcemaps.write('maps', {
-          includeContent: false,
-          sourceRoot: paths.srcScss
-        }))
+      includeContent: false,
+      sourceRoot: paths.scssPath
+    }))
     .pipe(gulp.dest(paths.cssDest))
     .pipe(browserSync.reload({ stream: true }));
 });

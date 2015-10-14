@@ -1,16 +1,21 @@
 @charset "utf-8";
-/* =============================================================================
- *   project-starter
-/* =========================================================================== */
+/*----------------------------------------------------------------------------*/
+/* project starter
+/*----------------------------------------------------------------------------*/
 
 // core files
 @import 'core/config';
 @import 'core/placeholder';
 @import 'core/mixins';
+@import 'core/sprite';
 @import 'core/default';
 
+// uncomment these belows if you use Foundation.
+// @import 'core/settings';
+// @import 'core/foundation';
+
 // module
-@import 'module/**/*.*';
+@import 'module/*.*';
 
 // layout
 @import 'layout/*.*';

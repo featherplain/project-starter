@@ -4,7 +4,7 @@
 
 /* the root element */
 html {
-  font-size: 14px;
+  font-size: 16px;
 }
 body {
   background-color: #fff;
@@ -13,8 +13,12 @@ body {
   word-wrap: break-word;
   font-family: $fontFamily;
   font-weight: 300;
+  margin: 0;
+  padding: 0;
 }
-
+html, body {
+  height: 100%;
+}
 /* grouping content */
 iframe {
   vertical-align: middle;
@@ -24,6 +28,7 @@ iframe {
 a {
   color: $colorLink;
   text-decoration: none;
+  word-wrap: break-word;
   &:focus {
     outline: thin dotted;
   }
