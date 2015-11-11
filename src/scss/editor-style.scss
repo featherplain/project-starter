@@ -15,7 +15,7 @@ Description: Used to style the TinyMCE editor.
   @if $include-wp-tinymce-styles {
 
     @import 'core/default';
-    @import 'module/wp-classes';
+    @import 'wp/wp-classes';
 
     @include wp-editor-styles;
   }
