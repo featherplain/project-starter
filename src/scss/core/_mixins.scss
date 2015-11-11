@@ -212,3 +212,61 @@ $buttonRadius: $baseRadius;
     color: $colorHover;
   }
 }
+
+//----------------------------------------------------------------------------
+// WordPress rditor styles
+//----------------------------------------------------------------------------
+@mixin wp-editor-styles {
+  h1 {}
+  h2 {}
+  h3 {}
+  h4 {}
+  h5 {}
+  h6 {}
+
+  // set font size from h1 to h6
+  @for $i from 1 through 6 {
+    h#{$i} {
+      font-size: #{28 - $i*2}px;
+    }
+  }
+
+  p {}
+
+  a {}
+
+  dl {
+    dt {}
+    dd {}
+  }
+
+  ul, ol {
+  }
+
+  ul {
+    li {}
+  }
+
+  ol {
+    li {}
+  }
+
+  blockquote {
+    > * {}
+  }
+
+  pre {
+    >code {}
+  }
+  code {}
+
+  kbd {}
+
+  table {
+    thead {}
+    tbody {}
+    tr {}
+    th {}
+    td {}
+  }
+}

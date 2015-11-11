@@ -1,8 +1,12 @@
 @charset "utf-8";
-/* default styles
-/* ---------------------------------------- */
 
-/* the root element */
+/* -------------------------------------------------------------- */
+/* default style
+/* -------------------------------------------------------------- */
+
+/**
+ * the root element
+ */
 html {
   font-size: 16px;
 }
@@ -19,12 +23,17 @@ body {
 html, body {
   height: 100%;
 }
-/* grouping content */
+
+/**
+ * grouping content
+ */
 iframe {
   vertical-align: middle;
 }
 
-/* text-level semantics */
+/**
+ * text-level semantics
+ */
 a {
   color: $colorLink;
   text-decoration: none;
@@ -70,15 +79,13 @@ h1, h2, h3, h4, h5, h6 {
   display: inline-block;
   text-decoration: none;
 }
-.fontEn {
-  font-family: $fontFamilyEn;
-}
 
-/* list items */
+/**
+ * list items
+ */
 ul {
-  li {
-    list-style-type: none;
-  }
+  list-style-type: none;
+  margin-left: 0;
 }
 
 dl {
@@ -97,7 +104,9 @@ dl {
   }
 }
 
-/* embedded content */
+/**
+ * embedded content
+ */
 img {
   line-height: 1.0;
   border: 0;
@@ -106,7 +115,9 @@ svg:not(:root){
   overflow: hidden;
 }
 
-/* table */
+/**
+ * table
+ */
 table {
   font: 100%;
   font-size: inherit;

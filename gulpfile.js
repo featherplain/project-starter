@@ -34,7 +34,8 @@ var paths = {
 };
 
 var gulpSassConf = {
-  'includePaths'   : []
+  includePaths  : [],
+  outputStyle   : 'expanded'
 };
 
 /*----------------------------------------------------------------------------*/
