@@ -10,9 +10,6 @@
     /* -------------------------------------------------------------- */
 
     .entry-content {
-      * {
-        margin: $wp-editor-margin;
-      }
       @include wp-editor-styles;
     }
 

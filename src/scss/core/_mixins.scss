@@ -214,9 +214,14 @@ $buttonRadius: $baseRadius;
 }
 
 //----------------------------------------------------------------------------
-// WordPress rditor styles
+// WordPress editor styles
 //----------------------------------------------------------------------------
 @mixin wp-editor-styles {
+
+  * {
+    margin: $wp-editor-margin;
+  }
+
   h1 {}
   h2 {}
   h3 {}

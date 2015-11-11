@@ -154,7 +154,7 @@ gulp.task('jsTasks', [
 /*----------------------------------------------------------------------------*/
 
 gulp.task('sass', function () {
-  return gulp.src(paths.scssPath + '**/*.scss')
+  return gulp.src(paths.scssPath + '**/app.scss')
     // .pipe($.changed(paths.cssDest, {extension: '.css'}))
     .pipe($.sourcemaps.init())
     .pipe($.cssGlobbing({ extensions: ['.scss'] }))
