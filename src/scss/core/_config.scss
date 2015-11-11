@@ -26,15 +26,21 @@ $fontFamilyEn       : "Helvetica Neue", "Helvetica",Sans-Serif;
 $fontFamilyCode     : Menlo,Consolas,Courier,sans-serif;
 
 //----------------------------------------------------------------------------*/
+// Styles
+//----------------------------------------------------------------------------*/
+$baseRadius: 4px;
+
+//----------------------------------------------------------------------------*/
 // Block size
 //----------------------------------------------------------------------------*/
 // $containerWidth: ;
-$maxWidth           : 1280px;
+$maxWidth           : 1200px;
 
 //----------------------------------------------------------------------------*/
 // Navigation size
 //----------------------------------------------------------------------------*/
-// $menuHeight        : ;
+// $headerHeight      : ;
+// $menuHeight        : $headerHeight;
 // $menuItemWidth     : ;
 // $menuItemHeight    : ;
 // $menuPadding       : ($menuHeight - $menuItemHeight) / 2; // Calclate padding size automatically
