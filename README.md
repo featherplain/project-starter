@@ -6,48 +6,37 @@ Project starter for web development with gulp + foundation
 ### Requires
 
 * Bower
-* gulp
 * Node.js
 * npm
 * Ruby
 * Sass >=3.4
-* sass-globbing
 
 ## Setup your project
 
-1.  Install gulp.
+You don't need to install gulp global.
 
 
-        $ npm install -g gulp
-
-
-2.  Install some dependencies.
+1.  Install some dependencies.
 
 
         $ cd path/to/directory ; npm install
   
 
-3.  Install sass-globbing.
-
-
-        $ gem install sass-globbing
-
-
-4.  Install bower_components and initialize them.
+1.  Install bower_components and initialize them.
 
 
         $ npm run gulp-init
 
-5.  To run gulp tasks with proxy mode, Set hostname on line 18 in gulpfile.js.
+1.  To run gulp tasks with proxy mode, Set hostname on line 18 in gulpfile.js.
 
 
         'vhost'          : 'example.dev'
     
 
-5.  Run gulp.
+1.  Run gulp.
 
         // proxy mode
-        $ gulp
+        $ npm run gulp
 
         // server-mode for static websites
         $ npm run gulp-server
