@@ -8,12 +8,10 @@ Project starter for web development with gulp + foundation
 * Bower
 * Node.js
 * npm
-* Ruby
-* Sass >=3.4
 
 ## Setup your project
 
-You don't need to install gulp global.
+You don't need to install gulp globaly.
 
 
 1.  Install some dependencies.
@@ -40,6 +38,8 @@ You don't need to install gulp global.
 
         // server-mode for static websites
         $ npm run gulp-server
+
+## Options
 
 ### foundation
 
