@@ -8,6 +8,7 @@
     "gulp": "gulp",
     "gulp-server": "gulp default --mode server",
     "gulp-init": "bower install; gulp init",
+    "gulp-zip": "gulp zip:dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Megumi Hano",
