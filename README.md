@@ -19,7 +19,7 @@ You don't need to install gulp globaly.
         $ cd path/to/directory ; npm install
   
 
-1.  Install bower_components and initialize them.
+1.  Install [Foundation](http://foundation.zurb.com/) and initialize if you need.
 
 
         $ npm run gulp-init
