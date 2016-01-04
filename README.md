@@ -5,7 +5,6 @@ Project starter for web development with gulp + foundation
 
 ### Requires
 
-* Bower
 * Node.js
 * npm
 
@@ -43,9 +42,14 @@ You don't need to install gulp globaly.
 
 ### foundation
 
-    src/scss/core/foundation/
-    src/scss/core/_settings.scss
-    src/scss/core/_foundation.scss
+    ├── components/
+    ├── forms/
+    ├── grid/
+    ├── typography/
+    ├── util/
+    ├── _global.scss
+    ├── _settings.scss
+    └── _foundation.scss
 
 ### autoprefix
 
@@ -83,14 +87,8 @@ Basically source file placed in `src/`. It passed to `dist/` as destination thro
 ├── setting.json
 ├── src
 │   ├── images
-│   │   ├── sprite
-│   │   │   ├── icon_starBlue.png
-│   │   │   ├── icon_starRed.png
-│   │   │   └── icon_starYellow.png
-│   │   └── sprite-svg
-│   │       ├── icon_starBlue.svg
-│   │       ├── icon_starRed.svg
-│   │       └── icon_starYellow.svg
+│   │   ├── sprite/
+│   │   └── sprite-svg/
 │   ├── jade
 │   │   ├── inc
 │   │   │   ├── core
@@ -111,6 +109,7 @@ Basically source file placed in `src/`. It passed to `dist/` as destination thro
 │   ├── scss
 │   │   ├── app.scss
 │   │   ├── core
+│   │   │   ├── foundation/
 │   │   │   ├── _config.scss
 │   │   │   ├── _default.scss
 │   │   │   ├── _mixins.scss
