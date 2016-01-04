@@ -4,22 +4,31 @@
 /*----------------------------------------------------------------------------*/
 
 // core files
+// ----------------------------------------------------------------------------
 @import 'core/config';
 @import 'core/functions';
 @import 'core/placeholder';
 @import 'core/mixins';
 @import 'core/sprite';
+
+// Foundation
+// Uncomment these belows if you use Foundation.
+// ----------------------------------------------------------------------------
+// @import 'core/foundation/settings';
+// @import 'core/foundation/foundation';
+
+// Comment out if you use Foundation. You don't need use default.scss then.
 @import 'core/default';
 
-// uncomment these belows if you use Foundation.
-// @import 'core/settings';
-// @import 'core/foundation';
-
 // module
+// ----------------------------------------------------------------------------
 @import 'module/*.*';
 
 // layout
+// ----------------------------------------------------------------------------
 @import 'layout/*.*';
 
 // WordPress
-@import 'wp/*.*';
+// Uncomment if you build WordPress theme.
+// ----------------------------------------------------------------------------
+// @import 'wp/*.*';

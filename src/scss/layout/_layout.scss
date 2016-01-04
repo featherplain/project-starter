@@ -3,15 +3,13 @@
 /* -------------------------------------------------------------- */
 /* layout
 /* -------------------------------------------------------------- */
-.l-container {}
+.l-container {
+}
 .l-header {
-  @extend %baseWidth;
 }
 .l-footer {
-  @extend %baseWidth;
 }
 .l-main {
-  @extend %baseWidth;
 }
 .l-primary {}
 .l-sidebar {}

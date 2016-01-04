@@ -33,16 +33,16 @@ var paths = {
   'cssDest'        : 'dist/css/',
 };
 
-var gulpSassConf = {
+var nodeSassConf = {
   includePaths  : [],
   outputStyle   : 'expanded'
 };
 
 /*----------------------------------------------------------------------------*/
-/* initializing bower_components
+/* initializing Foundation
 /*----------------------------------------------------------------------------*/
 
-gulp.task('bower:install', $.shell.task(['bower install']));
+gulp.task('npm:install', $.shell.task(['npm install foundation-sites']));
 
 gulp.task('install:foundation', function() {
   return gulp.src('src/shell/', {read: false})
@@ -50,7 +50,7 @@ gulp.task('install:foundation', function() {
 });
 
 gulp.task('init', function(cb) {
-  runSequence('bower:install', 'install:foundation', cb);
+  runSequence('npm:install', 'install:foundation', cb);
 });
 
 /*----------------------------------------------------------------------------*/
@@ -171,7 +171,7 @@ gulp.task('sass', function () {
     // .pipe($.changed(paths.cssDest, {extension: '.css'}))
     .pipe($.sourcemaps.init())
     .pipe($.cssGlobbing({ extensions: ['.scss'] }))
-    .pipe($.sass(gulpSassConf).on('error', $.sass.logError))
+    .pipe($.sass(nodeSassConf).on('error', $.sass.logError))
     .pipe($.autoprefixer({
       browsers: ['last 2 versions', 'ie 10', 'ie 9'],
       cascade: false
