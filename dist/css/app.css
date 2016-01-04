@@ -1,13 +1,6 @@
-@charset "UTF-8";
 /*----------------------------------------------------------------------------*/
 /* project starter
 /*----------------------------------------------------------------------------*/
-.l-header, .l-footer, .l-main {
-  width: 1200px;
-  max-width: 100%;
-  margin: 0 auto;
-}
-
 /*
 SCSS variables are information about icon's compiled state, stored under its original file name
 
@@ -39,164 +32,6 @@ The `sprites` mixin generates identical output to the CSS template
 @include sprites($spritesheet-sprites);
 */
 /* -------------------------------------------------------------- */
-/* default style
-/* -------------------------------------------------------------- */
-/**
- * the root element
- */
-html {
-  font-size: 16px;
-}
-
-body {
-  background-color: #fff;
-  background-repeat: no-repeat;
-  color: #333333;
-  word-wrap: break-word;
-  font-family: "Helvetica Neue", "Helvetica", "游ゴシック", "Yu Gothic", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", Arial, Sans-Serif;
-  font-weight: 300;
-  margin: 0;
-  padding: 0;
-}
-
-html, body {
-  height: 100%;
-}
-
-/**
- * grouping content
- */
-iframe {
-  vertical-align: middle;
-}
-
-/**
- * text-level semantics
- */
-a {
-  color: #24279f;
-  text-decoration: none;
-  word-wrap: break-word;
-}
-
-a:focus {
-  outline: thin dotted;
-}
-
-a:link,
-a:visited {
-  color: #24279f;
-}
-
-a:hover,
-a:active,
-a:focus {
-  outline: 0;
-  color: #3d40d3;
-  text-decoration: none;
-}
-
-p {
-  margin-bottom: 1.125em;
-  color: #333333;
-}
-
-p:last-child {
-  margin-bottom: 0;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: "Helvetica Neue", "Helvetica", "游ゴシック", "Yu Gothic", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", Arial, Sans-Serif;
-}
-
-h1,
-h1 > a, h2,
-h2 > a, h3,
-h3 > a, h4,
-h4 > a, h5,
-h5 > a, h6,
-h6 > a {
-  color: #333333;
-}
-
-h1:hover,
-h1 > a:hover, h2:hover,
-h2 > a:hover, h3:hover,
-h3 > a:hover, h4:hover,
-h4 > a:hover, h5:hover,
-h5 > a:hover, h6:hover,
-h6 > a:hover {
-  text-decoration: none;
-}
-
-::-moz-selection {
-  background: transparent;
-  background-color: #24279f;
-  color: #333333;
-}
-
-::selection {
-  background: transparent;
-  background-color: #24279f;
-  color: #333333;
-}
-
-.fa {
-  display: inline-block;
-  text-decoration: none;
-}
-
-/**
- * list items
- */
-ul {
-  list-style-type: none;
-  margin-left: 0;
-}
-
-dl {
-  margin-bottom: 2em;
-}
-
-dl:last-child {
-  margin-bottom: 0;
-}
-
-dl dt {
-  margin-bottom: 1em;
-}
-
-dl dd {
-  margin-bottom: 1em;
-}
-
-dl dd:last-child {
-  margin-bottom: 0;
-}
-
-/**
- * embedded content
- */
-img {
-  line-height: 1.0;
-  border: 0;
-}
-
-svg:not(:root) {
-  overflow: hidden;
-}
-
-/**
- * table
- */
-table {
-  font: 100%;
-  font-size: inherit;
-  border-spacing: 0;
-  border-collapse: collapse;
-}
-
-/* -------------------------------------------------------------- */
 /* buttons
 /* -------------------------------------------------------------- */
 .btn {
@@ -214,9 +49,7 @@ table {
   outline: 0;
 }
 
-.btn:hover,
-.btn:active,
-.btn:focus {
+.btn:hover, .btn:active, .btn:focus {
   outline: 0;
   text-decoration: none;
 }
@@ -225,9 +58,7 @@ table {
   color: #ffffff;
 }
 
-.btn:hover,
-.btn:active,
-.btn:focus {
+.btn:hover, .btn:active, .btn:focus {
   background-color: #007ea8;
   color: #ffffff;
 }
@@ -248,9 +79,7 @@ table {
   outline: 0;
 }
 
-.btnFull:hover,
-.btnFull:active,
-.btnFull:focus {
+.btnFull:hover, .btnFull:active, .btnFull:focus {
   outline: 0;
   text-decoration: none;
 }
@@ -259,9 +88,7 @@ table {
   color: #ffffff;
 }
 
-.btnFull:hover,
-.btnFull:active,
-.btnFull:focus {
+.btnFull:hover, .btnFull:active, .btnFull:focus {
   background-color: #007ea8;
   color: #ffffff;
 }
@@ -283,21 +110,16 @@ table {
   outline: 0;
 }
 
-.btnGhost:hover,
-.btnGhost:active,
-.btnGhost:focus {
+.btnGhost:hover, .btnGhost:active, .btnGhost:focus {
   outline: 0;
   text-decoration: none;
 }
 
-.btnGhost:link,
-.btnGhost:visited {
+.btnGhost:link, .btnGhost:visited {
   color: #555555;
 }
 
-.btnGhost:hover,
-.btnGhost:active,
-.btnGhost:focus {
+.btnGhost:hover, .btnGhost:active, .btnGhost:focus {
   background-color: #555555;
   color: #ffffff;
 }
@@ -311,156 +133,5 @@ table {
 /* -------------------------------------------------------------- */
 /* layout
 /* -------------------------------------------------------------- */
-/* -------------------------------------------------------------- */
-/* WordPress specific classes
-    /* -------------------------------------------------------------- */
-/**
-     * caption
-     */
-.wp-caption {
-  margin-bottom: rem-calc(15);
-  max-width: 100%;
-}
-
-.wp-caption img[class*="wp-image-"] {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.wp-caption-text {
-  margin: 0.8075em 0;
-  text-align: center;
-  font-size: rem-calc(12);
-}
-
-.wp-caption-text a {
-  font-size: rem-calc(12);
-}
-
-/**
-     * gallaries
-     */
-.gallery {
-  margin-bottom: rem-calc(15);
-}
-
-.gallery-item {
-  display: inline-block;
-  text-align: center;
-  vertical-align: top;
-  width: 100%;
-}
-
-.gallery-columns-2 .gallery-item {
-  max-width: 50%;
-}
-
-.gallery-columns-3 .gallery-item {
-  max-width: 33.33333%;
-}
-
-.gallery-columns-4 .gallery-item {
-  max-width: 25%;
-}
-
-.gallery-columns-5 .gallery-item {
-  max-width: 20%;
-}
-
-.gallery-columns-6 .gallery-item {
-  max-width: 16.66667%;
-}
-
-.gallery-columns-7 .gallery-item {
-  max-width: 14.28571%;
-}
-
-.gallery-columns-8 .gallery-item {
-  max-width: 12.5%;
-}
-
-.gallery-columns-9 .gallery-item {
-  max-width: 11.11111%;
-}
-
-.gallery-icon {
-  padding: 0;
-  background: none;
-  margin-bottom: 10px;
-}
-
-.gallery-caption {
-  display: block;
-}
-
-/**
-     * alignment
-     */
-.alignleft {
-  display: inline;
-  float: left;
-  margin-right: rem-calc(15);
-  margin-bottom: rem-calc(15);
-}
-
-.aligncenter {
-  clear: both;
-  display: block;
-  margin: 0 auto;
-}
-
-.alignright {
-  display: inline;
-  float: left;
-  margin-right: rem-calc(15);
-  margin-bottom: rem-calc(15);
-}
-
-.page-content .wp-smiley,
-.entry-content .wp-smiley,
-.comment-content .wp-smiley {
-  border: none;
-  margin-bottom: 0;
-  margin-top: 0;
-  padding: 0;
-}
-
-embed,
-iframe,
-object {
-  max-width: 100%;
-}
-
-/* -------------------------------------------------------------- */
-/* WordPress editor styles
-    /* -------------------------------------------------------------- */
-.entry-content * {
-  margin: 20px 0;
-}
-
-.entry-content h1 {
-  font-size: 26px;
-}
-
-.entry-content h2 {
-  font-size: 24px;
-}
-
-.entry-content h3 {
-  font-size: 22px;
-}
-
-.entry-content h4 {
-  font-size: 20px;
-}
-
-.entry-content h5 {
-  font-size: 18px;
-}
-
-.entry-content h6 {
-  font-size: 16px;
-}
 
 /*# sourceMappingURL=maps/app.css.map */
