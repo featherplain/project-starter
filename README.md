@@ -1,12 +1,14 @@
-project starter
+Project Starter
 ============
 
-Project starter for web development with gulp + foundation
+Project starter for web development with gulp + Foundation
+
+日本語: [ja-README](https://github.com/featherplain/project-starter/blob/master/ja-README.md)
 
 ### Requires
 
-* Node.js
-* npm
+- [Node.js](https://nodejs.org/en/)
+- [npm](https://www.npmjs.com/)
 
 ## Setup your project
 
