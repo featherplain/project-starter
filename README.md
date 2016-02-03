@@ -67,8 +67,6 @@ Basically source file placed in `src/`. It passed to `dist/` as destination thro
 .
 ├── LICENSE.md
 ├── README.md
-├── bower.json
-├── bower_components
 ├── dist
 │   ├── css
 │   │   └── app.css
@@ -115,11 +113,11 @@ Basically source file placed in `src/`. It passed to `dist/` as destination thro
 │   │   │   ├── _mixins.scss
 │   │   │   └── _placeholder.scss
 │   │   ├── layout
-│   │   │   ├── _l-footer.scss
-│   │   │   └── _l-header.scss
+│   │   │   ├── _footer.scss
+│   │   │   └── _header.scss
 │   │   └── module
-│   │       ├── _m-buttons.scss
-│   │       └── _m-sprite.scss
+│   │       ├── _buttons.scss
+│   │       └── _sprite.scss
 │   └── shell
 │       └── foundation.sh
 └── style.css
