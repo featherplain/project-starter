@@ -69,12 +69,12 @@ gulp はグローバルにインストールする必要はありません。下
 | タスク名  | 説明  | リファレンスサイト | 
 |---|---|---|
 | browser-sync | ブラウザのオートリロード | [BrewserSync](https://www.browsersync.io/) |
-| image-min | 画像ファイルの圧縮をする。`optimizationLevel: 3` で圧縮レベルを調整可能 | [gulp-imagemin](https://github.com/sindresorhus/gulp-imagemin) |
+| image-min | 画像ファイルの圧縮<br>`optimizationLevel: 3` の数字によって圧縮レベルが変わる | [gulp-imagemin](https://github.com/sindresorhus/gulp-imagemin) |
 | sprite-svg |  svg のスプライト画像を生成 | [gulp-svg-sprite](https://github.com/shakyshane/gulp-svg-sprites) | 
 | sprite |  スプライト画像を生成 | [gulp.spritesmith](https://github.com/twolfson/gulp.spritesmith) | 
 | jade | テンプレートエンジン [Jade](http://jade-lang.com/) を HTML にコンパル | [gulp-jade](https://github.com/phated/gulp-jade) | 
-| js |  JavaScript ファイルの結合、圧縮、`*.min` にリネーム | [gulp-concat](https://github.com/contra/gulp-concat), [gulp-uglify](https://github.com/terinjokes/gulp-uglify), [gulp-rename](https://github.com/hparra/gulp-rename) | 
-| sass | Sass ファイルを CSS にコンパイルする |[node-sass](https://github.com/sass/node-sass), [gulp-css-globbing](https://github.com/jsahlen/gulp-css-globbing), [gulp-sourcemaps](https://github.com/floridoo/gulp-sourcemaps)　|
+| js |  JavaScript ファイルの結合、圧縮、`*.min.js` にリネーム | [gulp-concat](https://github.com/contra/gulp-concat), [gulp-uglify](https://github.com/terinjokes/gulp-uglify), [gulp-rename](https://github.com/hparra/gulp-rename) | 
+| sass | ソースマップの作成、`*.scss` ファイルの globbing、Sass ファイルを CSS にコンパイルする |[node-sass](https://github.com/sass/node-sass), [gulp-css-globbing](https://github.com/jsahlen/gulp-css-globbing), [gulp-sourcemaps](https://github.com/floridoo/gulp-sourcemaps)　|
 | watch | ファイルの監視 |-|
 | default | 上記タスクを実行する |-|
 
