@@ -9,10 +9,7 @@ Project Starter
   - 日本語: [Node.js 日本ユーザーグループ](http://nodejs.jp/)
 - [npm](https://www.npmjs.com/)
 
-ファイルの編集に、タスクランナーの [gulp](http://gulpjs.com/) を使用しています。
-gulp を実行するには [Node.js](https://nodejs.org/en/) および [npm](https://www.npmjs.com/) が必要になります。
-
-Node.js と npm がお使いのマシンに入っていない場合、Node.js をインストールしてください。Node.js のインストール時に、自動的に npm も一緒にインストールされます。
+ファイルの編集に、タスクランナーの [gulp](http://gulpjs.com/) を使用しています。gulp を実行するには Node.js および npm が必要になります。Node.js と npm がお使いのマシンに入っていない場合、Node.js をインストールしてください。Node.js のインストール時に、自動的に npm も一緒にインストールされます。
 
 - Mac: [Homebrew](http://brew.sh/index_ja.html)
 - Windows: [Node.js のダウンロードページ](https://nodejs.org/en/download/)
@@ -21,8 +18,10 @@ Node.js と npm がお使いのマシンに入っていない場合、Node.js �
 
 編集用などのソースファイルは `src/` にあります。 gulp のタスク実行後、コンパイルされたファイルは `dist/` に格納されます。
 
-- ファイルを編集する場合はプロジェクトのセットアップ後、 `src/` ディレクトリを参照
-- 納品用(確認用)ファイルを閲覧する場合は `dist/` ディレクトリを参照
+- ファイルを編集する場合はプロジェクトのセットアップ後、 `src/` ディレクトリ内を参照
+- 納品用(閲覧用)ファイルは `dist/` ディレクトリ内を参照
+
+gulp を実行せず `dist/` 以下のファイルを直接編集も可能ですが、`src/` 内のソースファイルと**内容に差分が生じる**ので注意してください。
 
 ~~~
 .
@@ -42,7 +41,7 @@ Node.js と npm がお使いのマシンに入っていない場合、Node.js �
 │   ├── js/
 │   ├── scss/
 │   └── shell/
-└── style.css
+└── style.css // WordPress のテーマ制作時に必須になる CSS ファイル
 ~~~
 
 ## プロジェクトのセットアップ
@@ -62,7 +61,7 @@ gulp はグローバルにインストールする必要はありません。下
 |---|---|
 | $ npm run gulp | [プロキシモード](#プロキシモード)で gulp を実行する |
 | $ npm run gulp-server | 静的サイト(ファイル)制作時に gulp を実行する |
-| $ npm run gulp-init | [Foundation](#Foudndation) のインストール |
+| $ npm run gulp-init | [Foundation](#Foundation) のインストール |
 | $ npm run gulp-zip | `dist/` ディレクトリを圧縮し、zip 化する ※ Windows 環境では shell スクリプトが実行できないので注意 |
 
 ## gulp のタスク一覧
