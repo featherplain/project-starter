@@ -1,13 +1,13 @@
 {
   "name": "project-starter",
   "version": "0.5.0",
-  "description": "Project starter for web development with gulp + foundation",
+  "description": "Project starter for web development using gulp",
   "uri": "https://github.com/featherplain/project-starter",
   "main": "gulpfile.js",
   "scripts": {
+    "setup": "npm install && bash src/shell/foundation.sh && bash src/shell/iconfont.sh"
     "gulp": "gulp",
     "gulp-server": "gulp default --mode server",
-    "gulp-init": "npm install foundation-sites --save && bash src/shell/foundation.sh",
     "gulp-zip": "bash src/shell/zip.sh",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

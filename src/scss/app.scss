@@ -1,7 +1,4 @@
 @charset "utf-8";
-/*----------------------------------------------------------------------------*/
-/* project starter
-/*----------------------------------------------------------------------------*/
 
 // core files
 // ----------------------------------------------------------------------------
@@ -10,15 +7,17 @@
 @import 'core/placeholder';
 @import 'core/mixins';
 @import 'core/sprite';
+@import 'core/default';
 
 // Foundation
-// Uncomment these belows if you use Foundation.
 // ----------------------------------------------------------------------------
-// @import 'core/foundation/settings';
-// @import 'core/foundation/foundation';
+@import 'core/settings';
+@import 'core/foundation';
 
-// Comment out if you use Foundation. You don't need use default.scss then.
-@import 'core/default';
+// fonts
+// ----------------------------------------------------------------------------
+@import 'core/fonts';
+@import 'core/font-awesome';
 
 // module
 // ----------------------------------------------------------------------------
@@ -29,6 +28,5 @@
 @import 'layout/*.*';
 
 // WordPress
-// Uncomment if you build WordPress theme.
 // ----------------------------------------------------------------------------
 // @import 'wp/*.*';

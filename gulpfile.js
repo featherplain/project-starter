@@ -34,8 +34,12 @@ var paths = {
 };
 
 var nodeSassConf = {
-  includePaths  : [],
-  outputStyle   : 'expanded'
+  includePaths  : [
+    './node_modules/',
+    './node_modules/foundation-sites/scss/',
+    './node_modules/font-awesome/scss/',
+  ],
+  outputStyle   : 'compressed'
 };
 
 /*----------------------------------------------------------------------------*/
