@@ -115,28 +115,14 @@ gulp.task('jade', function() {
 /* js tasks
 /*----------------------------------------------------------------------------*/
 
-gulp.task('jsLib', function() {
-  return gulp.src(paths.jsPath + 'lib/*.js')
-    .pipe($.concat('lib.js'))
-    .pipe($.uglify())
-    .pipe($.rename({ suffix: '.min' }))
-    .pipe(gulp.dest(paths.jsDest))
-    .pipe(browserSync.reload({ stream: true }));
-});
-
-gulp.task('jsApp', function() {
-  return gulp.src(paths.jsPath + 'app/*.js')
+gulp.task('js', function() {
+  return gulp.src(paths.jsPath + '*.js')
     .pipe($.concat('script.js'))
     .pipe($.uglify())
     .pipe($.rename({ suffix: '.min' }))
     .pipe(gulp.dest(paths.jsDest))
     .pipe(browserSync.reload({ stream: true }));
 });
-
-gulp.task('jsTasks', [
-  'jsApp',
-  'jsLib'
-]);
 
 /*----------------------------------------------------------------------------*/
 /* Sass tasks
@@ -168,7 +154,7 @@ gulp.task('watch', function() {
   gulp.watch([paths.imagePath + 'sprite-svg/*.svg'], ['sprite-svg'])
   gulp.watch([paths.htmlDest  + '*.html'], ['bs-reload']);
   gulp.watch([paths.jadePath  + '**/*.jade'], ['jade']);
-  gulp.watch([paths.jsPath    + '**/*.js'], ['jsTasks']);
+  gulp.watch([paths.jsPath    + '*.js'], ['js']);
   gulp.watch([paths.scssPath  + '**/*.scss'], ['sass']);
 });
 
@@ -177,7 +163,7 @@ gulp.task('default', [
   'bs-reload',
   'image-min',
   'jade',
-  'jsTasks',
+  'js',
   'sass',
   'sprite',
   'sprite-svg',
