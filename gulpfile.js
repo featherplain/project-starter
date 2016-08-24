@@ -39,21 +39,6 @@ var nodeSassConf = {
 };
 
 /*----------------------------------------------------------------------------*/
-/* initializing Foundation
-/*----------------------------------------------------------------------------*/
-
-gulp.task('npm:install', $.shell.task(['npm install foundation-sites']));
-
-gulp.task('install:foundation', function() {
-  return gulp.src('src/shell/', {read: false})
-    .pipe($.shell(['bash src/shell/foundation.sh']));
-});
-
-gulp.task('init', function(cb) {
-  runSequence('npm:install', 'install:foundation', cb);
-});
-
-/*----------------------------------------------------------------------------*/
 /* build
 /*----------------------------------------------------------------------------*/
 
