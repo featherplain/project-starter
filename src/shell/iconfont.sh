@@ -7,8 +7,8 @@ function copy:iconfont() {
 
 if [[ -f ./src/scss/core/_font-awesome.scss ]]
 then
-  echo 'fonts already exists.'
+  echo 'file already exists in ./src/scss/core/.'
 else
-  echo 'start copy fonts.'
+  echo 'start copy file.'
   copy:iconfont
 fi
