@@ -115,7 +115,7 @@ gulp.task('jade', function() {
       return require('./setting.json');
     }))
     .pipe($.plumber())
-    .pipe($.jade({ pretty: true }))
+    .pipe($.pug({ pretty: true }))
     .pipe(gulp.dest(paths.htmlDest))
     .pipe(browserSync.reload({ stream: true }));
 });
@@ -153,7 +153,6 @@ gulp.task('jsTasks', [
 
 gulp.task('sass', function () {
   return gulp.src(paths.scssPath + '**/app.scss')
-    // .pipe($.changed(paths.cssDest, {extension: '.css'}))
     .pipe($.sourcemaps.init())
     .pipe($.cssGlobbing({ extensions: ['.scss'] }))
     .pipe($.sass(nodeSassConf).on('error', $.sass.logError))
