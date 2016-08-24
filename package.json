@@ -33,5 +33,9 @@
     "gulp.spritesmith": "^6.2.1",
     "run-sequence": "^1.2.2",
     "yargs": "^3.32.0"
+  },
+  "dependencies": {
+    "font-awesome": "^4.6.3",
+    "foundation-sites": "^6.2.3"
   }
 }
