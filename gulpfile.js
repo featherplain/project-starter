@@ -18,19 +18,19 @@ var paths = {
   'vhost'          : 'example.dev',
   'port'           : 3000,
 // html
-  'htmlDest'       : 'dist/',
+  'htmlDest'       : 'assets/',
 // images
-  'imageDest'      : 'dist/images/',
+  'imageDest'      : 'assets/images/',
   'imagePath'      : 'src/images/',
 // jade
   'jadePath'       : 'src/jade/',
 // JavaScript
   'jsPath'         : 'src/js/',
-  'jsDest'         : 'dist/js/',
+  'jsDest'         : 'assets/js/',
 // scss
   'scssPath'       : 'src/scss/',
 // css
-  'cssDest'        : 'dist/css/',
+  'cssDest'        : 'assets/css/',
 };
 
 var nodeSassConf = {
@@ -106,7 +106,7 @@ gulp.task('jade', function() {
       return require('./setting.json');
     }))
     .pipe($.plumber())
-    .pipe($.pug({ pretty: true }))
+    .pipe($.jade({ pretty: true }))
     .pipe(gulp.dest(paths.htmlDest))
     .pipe(browserSync.reload({ stream: true }));
 });
