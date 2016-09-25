@@ -5,16 +5,28 @@
   "uri": "https://github.com/featherplain/project-starter",
   "main": "gulpfile.js",
   "scripts": {
-    "setup": "npm install && bash src/shell/foundation.sh",
+    "install foundation": "bash ./bin/foundation.sh",
+    "install iconfont": "bash ./bin/iconfont.sh",
+    "zip": "bash ./bin/zip.sh",
     "gulp": "gulp",
     "gulp-server": "gulp default --mode server",
-    "gulp-zip": "bash src/shell/zip.sh",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/featherplain/feathericon.git"
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
   },
   "author": "Megumi Hano",
   "license": "MIT",
   "devDependencies": {
+    "babel-preset-es2015": "^6.14.0",
     "browser-sync": "latest",
+    "eslint": "^3.6.0",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.1",
     "gulp-concat": "^2.6.0",
@@ -22,7 +34,6 @@
     "gulp-data": "^1.2.1",
     "gulp-imagemin": "^3.0.3",
     "gulp-jade": "^1.1.0",
-    "gulp-load-plugins": "^1.2.4",
     "gulp-plumber": "^1.1.0",
     "gulp-pug": "^3.0.4",
     "gulp-rename": "^1.2.2",
@@ -31,7 +42,6 @@
     "gulp-svg-sprite": "^1.3.5",
     "gulp-uglify": "^2.0.0",
     "gulp.spritesmith": "^6.2.1",
-    "run-sequence": "^1.2.2",
     "yargs": "^3.32.0"
   },
   "dependencies": {
