@@ -5,10 +5,11 @@
   "uri": "https://github.com/featherplain/project-starter",
   "main": "gulpfile.js",
   "scripts": {
-    "setup": "npm install && bash src/shell/foundation.sh",
+    "install foundation": "bash ./bin/foundation.sh",
+    "install iconfont": "bash ./bin/iconfont.sh",
+    "zip": "bash ./bin/zip.sh",
     "gulp": "gulp",
     "gulp-server": "gulp default --mode server",
-    "gulp-zip": "bash src/shell/zip.sh",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
