@@ -71,7 +71,7 @@ gulp.task('browserSync', () => {
 
   gulp.watch([paths.imageDest + 'sprite/*.png'], { interval: 500 }, ['sprite:bs']);
   gulp.watch([paths.imagePath + 'sprite-svg/*.svg'], { interval: 500 }, ['spriteSvg:bs'])
-  gulp.watch([paths.htmlDest  + '*.html'], { interval: 500 }, ['bs:reload']);
   gulp.watch([paths.jadePath  + '**/*.jade'], { interval: 500 }, ['jade:bs']);
   gulp.watch([paths.jsPath    + '*.js'], { interval: 500 }, ['js:bs']);
+  gulp.watch([paths.htmlDest  + '*.html'], {interbal: 500}).on('change', browserSync.reload);
 })
