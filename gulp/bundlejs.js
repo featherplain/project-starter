@@ -5,18 +5,26 @@
 //---------------------------------------------------------------------------
 import { paths } from './config';
 
+import browserify from 'browserify';
+import babelify from 'babelify';
+import source from 'vinyl-source-stream';
+
 import gulp from 'gulp';
-import concat from 'gulp-concat';
-import uglify from 'gulp-uglify';
-import rename from 'gulp-rename';
 
 //---------------------------------------------------------------------------
 // Bundlejs
 //---------------------------------------------------------------------------
-gulp.task('js', () => {
-  return gulp.src(paths.jsPath + '*.js')
-    .pipe(concat('script.js'))
-    .pipe(uglify())
-    .pipe(rename({ suffix: '.min' }))
-    .pipe(gulp.dest(paths.jsDest));
+gulp.task('bundle:js', () => {
+  browserify({
+    entries: './src/js/app.js',
+    extensions: ['.js']
+  })
+  .transform(babelify)
+  .bundle()
+  .on("error", function (err) {
+			console.log('Error : ' + err.message);
+			this.emit('end');
+		})
+	.pipe(source('bundle.js'))
+	.pipe(gulp.dest(paths.jsDest))
 });
