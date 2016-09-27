@@ -18,7 +18,7 @@ export const paths = {
 // scss
   'scssPath'       : 'src/scss/',
 // css
-  'cssDest'        : 'assets/css/',
+  'cssDest'        : 'assets/css/'
 };
 
 export const options = {
@@ -37,11 +37,9 @@ export const options = {
 
 export const sassConf = {
   // sass options
-  includePaths  : [
-    './node_modules/',
+  includePaths     : [
     './node_modules/foundation-sites/scss/',
     './node_modules/font-awesome/scss/',
-    './node_modules/feathericon/build/scss/',
   ],
-  outputStyle   : 'compressed'
+  outputStyle  : 'compressed'
 };
