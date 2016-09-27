@@ -33,7 +33,7 @@ gulp.task('sass', () => {
       sourceRoot: paths.scssPath
     }))
     .pipe(gulp.dest(paths.cssDest))
-    .pipe(browserSync.stream({ match: 'assets/**/*.css' }));
+    .pipe(browserSync.stream({ match: '**/*.css' }));
 });
 
 //---------------------------------------------------------------------------
