@@ -23,7 +23,7 @@ import './gulp/tasks';
 // Sass
 //---------------------------------------------------------------------------
 gulp.task('sass', () => {
-  return gulp.src(paths.scssPath + '**/app.scss')
+  return gulp.src(paths.scssPath + '**/*.scss')
     .pipe(sourcemaps.init())
     .pipe(cssGlobbing({ extensions: ['.scss'] }))
     .pipe(sass(sassConf).on('error', sass.logError))
@@ -33,7 +33,7 @@ gulp.task('sass', () => {
       sourceRoot: paths.scssPath
     }))
     .pipe(gulp.dest(paths.cssDest))
-    .pipe(browserSync.stream({ match: '**/*.css' }));
+    .pipe(browserSync.stream({ match: 'assets/**/*.css' }));
 });
 
 //---------------------------------------------------------------------------
@@ -43,7 +43,7 @@ gulp.task('jade:bs', ['jade'], () => {
   browserSync.reload();
   return;
 });
-gulp.task('js:bs', ['bundlejs'], () => {
+gulp.task('js:bs', ['bundle:js'], () => {
   browserSync.reload();
   return;
 });
